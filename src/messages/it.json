@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "vans": "I CAMPER",
+    "book": "PRENOTA",
+    "routes": "ITINERARI",
+    "contact": "CONTATTI"
+  },
+  "hero": {
+    "title": "IL VIAGGIO INIZIA ADESSO.",
+    "subtitle": "La libertà è ovunque. Noi ti diamo solo il mezzo per raggiungerla.",
+    "cta": "SCOPRI I CAMPER"
+  },
+  "tagline": "TRAVELLERS ONLY",
+  "meta": {
+    "title": "HOLO VAN - Travellers Only",
+    "description": "Noleggio camper per veri viaggiatori. La libertà è ovunque."
+  }
+}
