@@ -1,6 +1,24 @@
 @import "tailwindcss";
 
 /* ===== FONT FACES ===== */
+
+/* Archivo - All Weights */
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/Archivo-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/Archivo-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: 'Archivo';
   src: url('/fonts/Archivo-Regular.ttf') format('truetype');
@@ -11,8 +29,57 @@
 
 @font-face {
   font-family: 'Archivo';
+  src: url('/fonts/Archivo-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Archivo';
   src: url('/fonts/Archivo-SemiBold.ttf') format('truetype');
   font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/Archivo-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/Archivo-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/Archivo-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Archivo ExtraCondensed - All Weights */
+@font-face {
+  font-family: 'Archivo ExtraCondensed';
+  src: url('/fonts/ArchivoExtraCondensed-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Archivo ExtraCondensed';
+  src: url('/fonts/ArchivoExtraCondensed-Light.ttf') format('truetype');
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
@@ -27,8 +94,40 @@
 
 @font-face {
   font-family: 'Archivo ExtraCondensed';
+  src: url('/fonts/ArchivoExtraCondensed-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Archivo ExtraCondensed';
   src: url('/fonts/ArchivoExtraCondensed-SemiBold.ttf') format('truetype');
   font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Archivo ExtraCondensed';
+  src: url('/fonts/ArchivoExtraCondensed-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Archivo ExtraCondensed';
+  src: url('/fonts/ArchivoExtraCondensed-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Archivo ExtraCondensed';
+  src: url('/fonts/ArchivoExtraCondensed-Black.ttf') format('truetype');
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
