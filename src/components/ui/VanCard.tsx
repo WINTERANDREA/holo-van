@@ -37,7 +37,7 @@ function CleanCard({ van, className }: { van: VanData; className?: string }) {
   return (
     <motion.div
       className={cn('bg-surface-elevated border border-border rounded-xl overflow-hidden', className)}
-      whileHover={{ y: -4, boxShadow: '0 12px 40px rgba(0,0,0,0.08)' }}
+      whileHover={{ y: -4, boxShadow: 'var(--shadow-card-hover)' }}
       transition={{ duration: 0.3 }}
     >
       <div className="aspect-[4/3] relative">
@@ -102,7 +102,7 @@ function HolographicCard({ van, className }: { van: VanData; className?: string 
       whileHover={{ y: -4 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="h-1.5 holographic-base" />
+      <div className="h-1.5 holographic-base holo-decorative-tier" />
       <div className="aspect-[16/9] relative">
         <ImagePlaceholder />
       </div>

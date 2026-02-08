@@ -2,10 +2,14 @@
 
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import { BookingSearch } from '@/components/booking/BookingSearch';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 export function Hero() {
   const t = useTranslations('hero');
   const tTagline = useTranslations();
+  const tBooking = useTranslations('booking');
+  const { matches: isDesktop } = useMediaQuery('(min-width: 768px)');
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -58,6 +62,24 @@ export function Hero() {
             {/* Holographic hover fill */}
             <span className="absolute inset-0 holographic-base opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </motion.button>
+        </motion.div>
+
+        {/* Booking Search */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.3, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-10 md:mt-14 max-w-3xl mx-auto"
+        >
+          <BookingSearch
+            variant={isDesktop ? 'inline' : 'stacked'}
+            labels={{
+              location: tBooking('location'),
+              pickup: tBooking('pickup'),
+              returnDate: tBooking('return'),
+              cta: tBooking('search'),
+            }}
+          />
         </motion.div>
       </div>
 

@@ -5,17 +5,21 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
+import { Link } from '@/i18n/navigation';
 import { MobileMenu } from './MobileMenu';
 import { HamburgerButton } from '@/components/ui/HamburgerButton';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 import { MagneticLink } from '@/components/ui/MagneticLink';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
+import { useScrollState } from '@/hooks/useScrollState';
+import { cn } from '@/lib/utils';
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const t = useTranslations('nav');
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { isScrolled, isAtTop, direction } = useScrollState(50);
 
   useEffect(() => {
     setMounted(true);
@@ -25,42 +29,49 @@ export function Header() {
     ? '/images/logo-horizontal-negative.png'
     : '/images/logo-horizontal-positive.png';
 
+  const shouldHide = direction === 'down' && isScrolled && !isMobileMenuOpen;
+
   return (
     <>
       <motion.header
-        className="fixed top-0 left-0 right-0 z-40 px-6 py-4"
+        className={cn(
+          'fixed top-0 left-0 right-0 z-40 px-6 py-4 transition-colors duration-300',
+          isAtTop && 'bg-transparent',
+          isScrolled && !isAtTop && 'bg-surface/80 backdrop-blur-md border-b border-border',
+        )}
         initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] as const }}
+        animate={{
+          y: shouldHide ? -100 : 0,
+          opacity: 1,
+        }}
+        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] as const }}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Left nav links (desktop) */}
           <nav className="hidden md:flex items-center gap-8">
-            <MagneticLink href="#">{t('vans')}</MagneticLink>
-            <MagneticLink href="#">{t('book')}</MagneticLink>
+            <MagneticLink href="/camper">{t('vans')}</MagneticLink>
+            <MagneticLink href="/prenota">{t('book')}</MagneticLink>
           </nav>
 
           {/* Center: Logo (always centered) */}
-          <motion.a
+          <Link
             href="/"
             className="absolute left-1/2 -translate-x-1/2"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
           >
             <Image
               src={logoSrc}
               alt="HOLO VAN"
               width={120}
               height={40}
-              className="h-10 w-auto"
+              className="h-10 w-auto hover:scale-105 active:scale-[0.98] transition-transform"
               priority
             />
-          </motion.a>
+          </Link>
 
           {/* Right nav links + theme toggle + language switcher (desktop) */}
           <div className="hidden md:flex items-center gap-8">
-            <MagneticLink href="#">{t('routes')}</MagneticLink>
-            <MagneticLink href="#">{t('contact')}</MagneticLink>
+            <MagneticLink href="/itinerari">{t('routes')}</MagneticLink>
+            <MagneticLink href="/contatti">{t('contact')}</MagneticLink>
             <ThemeToggle />
             <LanguageSwitcher />
           </div>

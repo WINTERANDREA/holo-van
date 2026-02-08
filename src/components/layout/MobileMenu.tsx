@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 import Image from 'next/image';
 
@@ -40,10 +41,10 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const t = useTranslations('nav');
 
   const links = [
-    { key: 'vans', href: '#' },
-    { key: 'book', href: '#' },
-    { key: 'routes', href: '#' },
-    { key: 'contact', href: '#' },
+    { key: 'vans' as const, href: '/camper' },
+    { key: 'book' as const, href: '/prenota' },
+    { key: 'routes' as const, href: '/itinerari' },
+    { key: 'contact' as const, href: '/contatti' },
   ];
 
   return (
@@ -97,18 +98,21 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           {/* Links */}
           <nav className="flex flex-col justify-center h-full px-8">
             {links.map(({ key, href }, i) => (
-              <motion.a
+              <motion.div
                 key={key}
-                href={href}
                 custom={i}
                 variants={linkVariants}
                 initial="closed"
                 animate="open"
-                className="font-archivo-condensed font-semibold text-5xl sm:text-6xl text-white py-4 hover:holographic-text transition-all duration-300"
-                onClick={onClose}
               >
-                {t(key)}
-              </motion.a>
+                <Link
+                  href={href}
+                  className="block font-archivo-condensed font-semibold text-5xl sm:text-6xl text-white py-4 hover:holographic-text transition-all duration-300"
+                  onClick={onClose}
+                >
+                  {t(key)}
+                </Link>
+              </motion.div>
             ))}
           </nav>
 

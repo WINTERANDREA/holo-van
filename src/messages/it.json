@@ -58,7 +58,124 @@
     },
     "copyright": "© 2026 HOLO VAN. Tutti i diritti riservati."
   },
+  "whyHoloVan": {
+    "sectionTitle": "PERCHÉ HOLO VAN",
+    "sectionSubtitle": "Non siamo un noleggio. Siamo un modo di viaggiare.",
+    "freedom": {
+      "title": "LIBERTÀ TOTALE",
+      "description": "Nessun itinerario obbligato, nessun check-in. Parti quando vuoi, fermati dove vuoi. Il viaggio è tuo."
+    },
+    "routes": {
+      "title": "ITINERARI INSIDER",
+      "description": "Percorsi curati da chi l'Italia la vive davvero. Posti che non trovi su nessuna guida turistica."
+    },
+    "community": {
+      "title": "COMMUNITY VERA",
+      "description": "Viaggiatori, non turisti. Una rete di persone che condividono la stessa filosofia di viaggio."
+    }
+  },
   "faq": {
     "sectionTitle": "DOMANDE FREQUENTI"
+  },
+  "contact": {
+    "title": "CONTATTI",
+    "subtitle": "Hai una domanda? Scrivici. Rispondiamo sempre.",
+    "form": {
+      "name": "NOME",
+      "namePlaceholder": "Il tuo nome",
+      "email": "EMAIL",
+      "emailPlaceholder": "La tua email",
+      "subject": "OGGETTO",
+      "subjectPlaceholder": "Seleziona un argomento",
+      "subjects": {
+        "general": "Informazioni generali",
+        "booking": "Prenotazione",
+        "vans": "Info sui camper",
+        "routes": "Itinerari",
+        "partnership": "Collaborazione"
+      },
+      "message": "MESSAGGIO",
+      "messagePlaceholder": "Raccontaci come possiamo aiutarti...",
+      "send": "INVIA MESSAGGIO",
+      "sending": "INVIO IN CORSO...",
+      "success": "Messaggio inviato! Ti risponderemo presto.",
+      "errors": {
+        "nameRequired": "Il nome è obbligatorio",
+        "emailRequired": "L'email è obbligatoria",
+        "emailInvalid": "Inserisci un'email valida",
+        "subjectRequired": "Seleziona un argomento",
+        "messageRequired": "Il messaggio è obbligatorio"
+      }
+    },
+    "info": {
+      "title": "DOVE TROVARCI",
+      "address": "Via del Viaggio 42, Roma, Italia",
+      "phone": "+39 06 1234 5678",
+      "email": "ciao@holo-van.it",
+      "hours": "Lun–Ven: 9:00–18:00",
+      "social": "SEGUICI"
+    },
+    "faq": {
+      "title": "DOMANDE FREQUENTI",
+      "items": [
+        {
+          "question": "Come funziona il noleggio?",
+          "answer": "Scegli il tuo camper, le date e il punto di ritiro. Ti consegniamo il van con un briefing completo su come usarlo. Al rientro, riportalo al punto di ritiro."
+        },
+        {
+          "question": "Serve una patente speciale?",
+          "answer": "No, tutti i nostri camper si guidano con la patente B standard. Ti forniamo un briefing completo prima della partenza."
+        },
+        {
+          "question": "Cosa è incluso nel prezzo?",
+          "answer": "Assicurazione completa, attrezzatura da cucina, biancheria da letto, kit di pulizia e assistenza stradale 24/7. Tutto quello che serve per partire subito."
+        },
+        {
+          "question": "Posso portare il mio animale?",
+          "answer": "Certo! I veri viaggiatori portano anche i loro compagni a quattro zampe. Chiediamo solo di lasciare il van pulito al rientro."
+        },
+        {
+          "question": "Qual è la politica di cancellazione?",
+          "answer": "Cancellazione gratuita fino a 7 giorni prima della partenza. Dopo, tratteniamo il 30% del totale. Perché la libertà è anche nel cambiare programma."
+        }
+      ]
+    }
+  },
+  "pages": {
+    "catalog": {
+      "title": "I NOSTRI CAMPER",
+      "subtitle": "Ogni van è una promessa di libertà. Scegli il tuo.",
+      "viewDetails": "SCOPRI",
+      "backToCatalog": "TORNA AI CAMPER"
+    },
+    "vanDetail": {
+      "comingSoon": "Dettagli in arrivo",
+      "comingSoonText": "Stiamo preparando tutto per mostrarti questo van nel dettaglio. Torna presto.",
+      "specs": "SPECIFICHE",
+      "features": "CARATTERISTICHE",
+      "book": "PRENOTA QUESTO VAN"
+    },
+    "itineraries": {
+      "title": "ITINERARI",
+      "subtitle": "Percorsi segreti. Esperienze vere. Zero guide turistiche.",
+      "comingSoon": "In arrivo",
+      "comingSoonText": "I nostri itinerari insider sono in fase di preparazione. Percorsi curati da chi l'Italia la conosce per davvero."
+    },
+    "booking": {
+      "title": "PRENOTA",
+      "subtitle": "Scegli le date, scegli il van. Il resto è avventura.",
+      "integrationNote": "Il sistema di prenotazione completo sarà disponibile a breve. Nel frattempo, contattaci direttamente per prenotare.",
+      "contactUs": "CONTATTACI"
+    },
+    "privacy": {
+      "title": "PRIVACY POLICY",
+      "lastUpdated": "Ultimo aggiornamento: Febbraio 2026",
+      "content": "La tua privacy è importante per noi. Questa policy descrive come HOLO VAN raccoglie, utilizza e protegge i tuoi dati personali quando utilizzi il nostro sito web e i nostri servizi di noleggio camper. Il documento completo sarà disponibile prima del lancio ufficiale del servizio."
+    },
+    "terms": {
+      "title": "TERMINI E CONDIZIONI",
+      "lastUpdated": "Ultimo aggiornamento: Febbraio 2026",
+      "content": "Questi termini regolano l'utilizzo del sito web holo-van.it e dei servizi di noleggio camper forniti da HOLO VAN. Utilizzando il nostro sito, accetti di essere vincolato da questi termini. Il documento completo sarà disponibile prima del lancio ufficiale del servizio."
+    }
   }
 }

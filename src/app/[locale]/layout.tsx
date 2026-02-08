@@ -3,6 +3,8 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { ThemeProvider } from 'next-themes';
 import { routing } from '@/i18n/routing';
+import { Footer } from '@/components/layout/Footer';
+import { PageTransition } from '@/components/effects/PageTransition';
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -32,9 +34,12 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className="font-archivo antialiased bg-surface text-primary">
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
           <NextIntlClientProvider messages={messages}>
-            {children}
+            <PageTransition>
+              {children}
+            </PageTransition>
+            <Footer />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

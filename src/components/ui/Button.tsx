@@ -48,7 +48,7 @@ export function Button({
       onClick={onClick}
       disabled={disabled}
       className={`
-        inline-flex items-center justify-center
+        group inline-flex items-center justify-center
         font-archivo-condensed font-semibold uppercase tracking-wider
         transition-colors duration-200
         disabled:opacity-50 disabled:pointer-events-none

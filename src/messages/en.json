@@ -58,7 +58,124 @@
     },
     "copyright": "© 2026 HOLO VAN. All rights reserved."
   },
+  "whyHoloVan": {
+    "sectionTitle": "WHY HOLO VAN",
+    "sectionSubtitle": "We're not a rental. We're a way to travel.",
+    "freedom": {
+      "title": "TOTAL FREEDOM",
+      "description": "No fixed itinerary, no check-in. Leave when you want, stop where you want. The journey is yours."
+    },
+    "routes": {
+      "title": "INSIDER ROUTES",
+      "description": "Routes curated by people who truly live Italy. Places you won't find in any guidebook."
+    },
+    "community": {
+      "title": "REAL COMMUNITY",
+      "description": "Travellers, not tourists. A network of people who share the same travel philosophy."
+    }
+  },
   "faq": {
     "sectionTitle": "FREQUENTLY ASKED QUESTIONS"
+  },
+  "contact": {
+    "title": "CONTACT",
+    "subtitle": "Got a question? Write to us. We always reply.",
+    "form": {
+      "name": "NAME",
+      "namePlaceholder": "Your name",
+      "email": "EMAIL",
+      "emailPlaceholder": "Your email",
+      "subject": "SUBJECT",
+      "subjectPlaceholder": "Select a topic",
+      "subjects": {
+        "general": "General enquiry",
+        "booking": "Booking",
+        "vans": "Van information",
+        "routes": "Routes",
+        "partnership": "Partnership"
+      },
+      "message": "MESSAGE",
+      "messagePlaceholder": "Tell us how we can help...",
+      "send": "SEND MESSAGE",
+      "sending": "SENDING...",
+      "success": "Message sent! We'll get back to you soon.",
+      "errors": {
+        "nameRequired": "Name is required",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Please enter a valid email",
+        "subjectRequired": "Please select a subject",
+        "messageRequired": "Message is required"
+      }
+    },
+    "info": {
+      "title": "FIND US",
+      "address": "Via del Viaggio 42, Rome, Italy",
+      "phone": "+39 06 1234 5678",
+      "email": "ciao@holo-van.it",
+      "hours": "Mon–Fri: 9:00–18:00",
+      "social": "FOLLOW US"
+    },
+    "faq": {
+      "title": "FREQUENTLY ASKED QUESTIONS",
+      "items": [
+        {
+          "question": "How does the rental work?",
+          "answer": "Choose your van, dates and pick-up point. We hand over the van with a full briefing on how to use it. On return, bring it back to the pick-up point."
+        },
+        {
+          "question": "Do I need a special licence?",
+          "answer": "No, all our vans can be driven with a standard B licence. We provide a full briefing before departure."
+        },
+        {
+          "question": "What's included in the price?",
+          "answer": "Full insurance, kitchen equipment, bed linen, cleaning kit and 24/7 roadside assistance. Everything you need to hit the road."
+        },
+        {
+          "question": "Can I bring my pet?",
+          "answer": "Of course! Real travellers bring their four-legged companions too. We just ask that you leave the van clean on return."
+        },
+        {
+          "question": "What's the cancellation policy?",
+          "answer": "Free cancellation up to 7 days before departure. After that, we retain 30% of the total. Because freedom also means changing plans."
+        }
+      ]
+    }
+  },
+  "pages": {
+    "catalog": {
+      "title": "OUR VANS",
+      "subtitle": "Every van is a promise of freedom. Choose yours.",
+      "viewDetails": "DISCOVER",
+      "backToCatalog": "BACK TO VANS"
+    },
+    "vanDetail": {
+      "comingSoon": "Details coming soon",
+      "comingSoonText": "We're getting everything ready to show you this van in detail. Check back soon.",
+      "specs": "SPECS",
+      "features": "FEATURES",
+      "book": "BOOK THIS VAN"
+    },
+    "itineraries": {
+      "title": "ROUTES",
+      "subtitle": "Secret routes. Real experiences. Zero guidebooks.",
+      "comingSoon": "Coming soon",
+      "comingSoonText": "Our insider routes are being prepared. Routes curated by people who truly know Italy."
+    },
+    "booking": {
+      "title": "BOOK",
+      "subtitle": "Choose the dates, choose the van. The rest is adventure.",
+      "integrationNote": "The full booking system will be available soon. In the meantime, contact us directly to book.",
+      "contactUs": "CONTACT US"
+    },
+    "privacy": {
+      "title": "PRIVACY POLICY",
+      "lastUpdated": "Last updated: February 2026",
+      "content": "Your privacy matters to us. This policy describes how HOLO VAN collects, uses and protects your personal data when you use our website and camper van rental services. The full document will be available before the official service launch."
+    },
+    "terms": {
+      "title": "TERMS & CONDITIONS",
+      "lastUpdated": "Last updated: February 2026",
+      "content": "These terms govern your use of the holo-van.it website and the camper van rental services provided by HOLO VAN. By using our site, you agree to be bound by these terms. The full document will be available before the official service launch."
+    }
   }
 }

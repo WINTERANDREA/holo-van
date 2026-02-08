@@ -26,7 +26,7 @@ function VanCardA() {
   return (
     <motion.div
       className="bg-surface-elevated border border-border rounded-xl overflow-hidden max-w-sm"
-      whileHover={{ y: -4, boxShadow: '0 12px 40px rgba(0,0,0,0.08)' }}
+      whileHover={{ y: -4, boxShadow: 'var(--shadow-card-hover)' }}
       transition={{ duration: 0.3 }}
     >
       {/* Image placeholder */}

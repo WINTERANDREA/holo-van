@@ -18,11 +18,11 @@ export function Card({ children, className = '', hover = true, holoAccent = fals
         ${holoAccent ? 'relative' : ''}
         ${className}
       `}
-      whileHover={hover ? { y: -4, boxShadow: '0 12px 40px rgba(0,0,0,0.08)' } : undefined}
+      whileHover={hover ? { y: -4, boxShadow: 'var(--shadow-card-hover)' } : undefined}
       transition={{ duration: 0.3 }}
     >
       {holoAccent && (
-        <div className="absolute top-0 left-0 right-0 h-1 holographic-base" />
+        <div className="absolute top-0 left-0 right-0 h-1 holographic-base holo-decorative-tier" />
       )}
       {children}
     </motion.div>

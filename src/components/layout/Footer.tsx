@@ -1,38 +1,29 @@
 'use client';
 
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
-interface FooterProps {
-  translations?: {
-    newsletter?: { title?: string; subtitle?: string; placeholder?: string; cta?: string };
-    columns?: {
-      explore?: { title?: string; vans?: string; routes?: string; groupTrips?: string };
-      info?: { title?: string; about?: string; faq?: string; contact?: string };
-      legal?: { title?: string; privacy?: string; terms?: string; cookies?: string };
-    };
-    copyright?: string;
-    tagline?: string;
-  };
-}
+export function Footer() {
+  const t = useTranslations('footer');
 
-const defaultTranslations = {
-  newsletter: {
-    title: 'RESTA IN VIAGGIO',
-    subtitle: 'Iscriviti per itinerari esclusivi e offerte.',
-    placeholder: 'La tua email',
-    cta: 'ISCRIVITI',
-  },
-  columns: {
-    explore: { title: 'ESPLORA', vans: 'I Camper', routes: 'Itinerari', groupTrips: 'Viaggi di Gruppo' },
-    info: { title: 'INFO', about: 'Chi Siamo', faq: 'FAQ', contact: 'Contatti' },
-    legal: { title: 'LEGALE', privacy: 'Privacy', terms: 'Termini', cookies: 'Cookie' },
-  },
-  copyright: `© ${new Date().getFullYear()} HOLO VAN. Tutti i diritti riservati.`,
-  tagline: 'TRAVELLERS ONLY',
-};
+  const exploreLinks = [
+    { label: t('explore.vans'), href: '/camper' },
+    { label: t('explore.routes'), href: '/itinerari' },
+    { label: t('explore.groupTrips'), href: '/viaggi-gruppo' },
+  ];
 
-export function Footer({ translations }: FooterProps) {
-  const t = { ...defaultTranslations, ...translations };
+  const infoLinks = [
+    { label: t('info.about'), href: '/contatti' },
+    { label: t('info.faq'), href: '/contatti#faq' },
+    { label: t('info.contact'), href: '/contatti' },
+  ];
+
+  const legalLinks = [
+    { label: t('legal.privacy'), href: '/privacy' },
+    { label: t('legal.terms'), href: '/termini' },
+    { label: t('legal.cookies'), href: '/privacy' },
+  ];
 
   return (
     <footer className="bg-holo-charcoal text-white relative">
@@ -44,10 +35,10 @@ export function Footer({ translations }: FooterProps) {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 pb-12 border-b border-white/10">
           <div>
             <h3 className="font-archivo-condensed font-semibold text-xl uppercase tracking-wider">
-              {t.newsletter?.title}
+              {t('newsletter.title')}
             </h3>
             <p className="font-archivo text-sm text-white/60 mt-1">
-              {t.newsletter?.subtitle}
+              {t('newsletter.subtitle')}
             </p>
           </div>
           <form
@@ -56,14 +47,14 @@ export function Footer({ translations }: FooterProps) {
           >
             <input
               type="email"
-              placeholder={t.newsletter?.placeholder}
+              placeholder={t('newsletter.placeholder')}
               className="flex-1 md:w-64 px-4 py-3 bg-white/10 border border-white/10 font-archivo text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-white/30 transition-colors"
             />
             <button
               type="submit"
               className="px-6 py-3 holographic-base text-holo-charcoal font-archivo-condensed font-semibold text-sm uppercase tracking-wider cursor-pointer"
             >
-              {t.newsletter?.cta}
+              {t('newsletter.cta')}
             </button>
           </form>
         </div>
@@ -81,64 +72,55 @@ export function Footer({ translations }: FooterProps) {
               unoptimized
             />
             <p className="font-archivo text-xs text-white/40 mt-4 max-w-[200px]">
-              {t.tagline}
+              TRAVELLERS ONLY
             </p>
           </div>
 
           {/* Explore */}
           <div>
             <h4 className="font-archivo-condensed font-semibold text-sm uppercase tracking-wider mb-4">
-              {t.columns?.explore?.title}
+              {t('explore.title')}
             </h4>
             <ul className="space-y-2">
-              {[t.columns?.explore?.vans, t.columns?.explore?.routes, t.columns?.explore?.groupTrips].map(
-                (label) =>
-                  label && (
-                    <li key={label}>
-                      <a href="#" className="font-archivo text-sm text-white/60 hover:text-white transition-colors">
-                        {label}
-                      </a>
-                    </li>
-                  )
-              )}
+              {exploreLinks.map(({ label, href }) => (
+                <li key={label}>
+                  <Link href={href} className="font-archivo text-sm text-white/60 hover:text-white transition-colors">
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Info */}
           <div>
             <h4 className="font-archivo-condensed font-semibold text-sm uppercase tracking-wider mb-4">
-              {t.columns?.info?.title}
+              {t('info.title')}
             </h4>
             <ul className="space-y-2">
-              {[t.columns?.info?.about, t.columns?.info?.faq, t.columns?.info?.contact].map(
-                (label) =>
-                  label && (
-                    <li key={label}>
-                      <a href="#" className="font-archivo text-sm text-white/60 hover:text-white transition-colors">
-                        {label}
-                      </a>
-                    </li>
-                  )
-              )}
+              {infoLinks.map(({ label, href }) => (
+                <li key={label}>
+                  <Link href={href} className="font-archivo text-sm text-white/60 hover:text-white transition-colors">
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Legal */}
           <div>
             <h4 className="font-archivo-condensed font-semibold text-sm uppercase tracking-wider mb-4">
-              {t.columns?.legal?.title}
+              {t('legal.title')}
             </h4>
             <ul className="space-y-2">
-              {[t.columns?.legal?.privacy, t.columns?.legal?.terms, t.columns?.legal?.cookies].map(
-                (label) =>
-                  label && (
-                    <li key={label}>
-                      <a href="#" className="font-archivo text-sm text-white/60 hover:text-white transition-colors">
-                        {label}
-                      </a>
-                    </li>
-                  )
-              )}
+              {legalLinks.map(({ label, href }) => (
+                <li key={label}>
+                  <Link href={href} className="font-archivo text-sm text-white/60 hover:text-white transition-colors">
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -146,7 +128,7 @@ export function Footer({ translations }: FooterProps) {
         {/* Copyright */}
         <div className="pt-8 border-t border-white/10 text-center">
           <p className="font-archivo text-xs text-white/40">
-            {t.copyright}
+            {t('copyright')}
           </p>
         </div>
       </div>

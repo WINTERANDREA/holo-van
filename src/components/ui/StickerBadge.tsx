@@ -42,14 +42,14 @@ export function StickerBadge({
   animate = false,
   className,
 }: StickerBadgeProps) {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
 
   const resolvedVariant =
     variant === 'auto'
-      ? mounted && theme === 'dark'
+      ? mounted && resolvedTheme === 'dark'
         ? 'transparent'
         : 'holographic'
       : variant;

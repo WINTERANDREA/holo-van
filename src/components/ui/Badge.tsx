@@ -17,8 +17,8 @@ const variantClasses: Record<BadgeVariant, string> = {
   default: 'bg-primary/10 text-primary',
   holographic: 'holographic-base text-holo-charcoal',
   outline: 'border border-border text-secondary',
-  success: 'bg-holo-mint/30 text-holo-charcoal dark:text-holo-mint',
-  warning: 'bg-holo-peach/30 text-holo-charcoal dark:text-holo-peach',
+  success: 'bg-holo-mint/20 text-success',
+  warning: 'bg-holo-peach/20 text-warning',
 };
 
 const sizeClasses: Record<BadgeSize, string> = {
