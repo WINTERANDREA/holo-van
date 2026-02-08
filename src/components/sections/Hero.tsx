@@ -13,7 +13,7 @@ export function Hero() {
       <div className="text-center z-10 px-4 max-w-5xl mx-auto">
         {/* Tagline */}
         <motion.p
-          className="font-archivo-condensed text-sm tracking-[0.3em] text-holo-charcoal/60 mb-6"
+          className="font-archivo-condensed text-sm tracking-[0.3em] text-secondary mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -23,7 +23,7 @@ export function Hero() {
 
         {/* Main Headline */}
         <motion.h1
-          className="font-archivo-condensed font-semibold text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-holo-charcoal tracking-tight leading-[0.9]"
+          className="font-archivo-condensed font-semibold text-fluid-hero text-primary tracking-tight leading-[0.9]"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
@@ -33,7 +33,7 @@ export function Hero() {
 
         {/* Subtitle */}
         <motion.p
-          className="mt-6 md:mt-8 font-archivo text-lg md:text-xl text-holo-charcoal/70 max-w-xl mx-auto"
+          className="mt-6 md:mt-8 font-archivo text-fluid-body-lg text-secondary max-w-xl mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -49,7 +49,7 @@ export function Hero() {
           className="mt-10 md:mt-12"
         >
           <motion.button
-            className="inline-block px-8 py-4 bg-holo-charcoal text-white font-archivo-condensed font-semibold tracking-wider relative overflow-hidden group cursor-pointer"
+            className="inline-block px-8 py-4 bg-holo-charcoal dark:bg-holo-offwhite text-white dark:text-holo-charcoal font-archivo-condensed font-semibold tracking-wider relative overflow-hidden group cursor-pointer"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => {}}
@@ -69,12 +69,12 @@ export function Hero() {
         transition={{ delay: 1.5, duration: 0.5 }}
       >
         <motion.div
-          className="w-6 h-10 border-2 border-holo-charcoal/30 rounded-full flex justify-center pt-2"
+          className="w-6 h-10 border-2 border-border rounded-full flex justify-center pt-2"
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
           <motion.div
-            className="w-1.5 h-1.5 bg-holo-charcoal/50 rounded-full"
+            className="w-1.5 h-1.5 bg-muted rounded-full"
             animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           />

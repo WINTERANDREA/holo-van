@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 export function HolographicBackground() {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
+      {/* Dark mode base layer */}
+      <div className="absolute inset-0 bg-surface" />
       {/* Base gradient layer */}
       <motion.div
         className="absolute inset-0 holographic-base"

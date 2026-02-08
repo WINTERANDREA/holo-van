@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "vans": "VANS",
+    "book": "BOOK",
+    "routes": "ROUTES",
+    "contact": "CONTACT"
+  },
+  "hero": {
+    "title": "THE JOURNEY STARTS NOW.",
+    "subtitle": "Freedom is everywhere. We just give you the means to reach it.",
+    "cta": "EXPLORE VANS"
+  },
+  "tagline": "TRAVELLERS ONLY",
+  "meta": {
+    "title": "HOLO VAN - Travellers Only",
+    "description": "Premium camper van rental for real travelers. Freedom is everywhere."
+  },
+  "booking": {
+    "location": "PICK-UP",
+    "pickup": "DEPARTURE",
+    "return": "RETURN",
+    "search": "BOOK NOW",
+    "locationPlaceholder": "Rome, Milan, Naples..."
+  },
+  "vans": {
+    "sectionTitle": "OUR VANS",
+    "sectionSubtitle": "Choose your travel companion.",
+    "details": "Details",
+    "bookNow": "Book Now",
+    "info": "Info",
+    "capacity": "seats",
+    "perDay": "/day"
+  },
+  "footer": {
+    "newsletter": {
+      "title": "STAY ON THE ROAD",
+      "subtitle": "Subscribe for exclusive routes and offers.",
+      "placeholder": "Your email",
+      "cta": "SUBSCRIBE"
+    },
+    "explore": {
+      "title": "EXPLORE",
+      "vans": "Vans",
+      "routes": "Routes",
+      "groupTrips": "Group Trips"
+    },
+    "info": {
+      "title": "INFO",
+      "about": "About Us",
+      "faq": "FAQ",
+      "contact": "Contact"
+    },
+    "legal": {
+      "title": "LEGAL",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "cookies": "Cookies"
+    },
+    "copyright": "© 2026 HOLO VAN. All rights reserved."
+  },
+  "faq": {
+    "sectionTitle": "FREQUENTLY ASKED QUESTIONS"
+  }
+}

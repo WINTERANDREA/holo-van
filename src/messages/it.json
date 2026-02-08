@@ -14,5 +14,51 @@
   "meta": {
     "title": "HOLO VAN - Travellers Only",
     "description": "Noleggio camper per veri viaggiatori. La libertà è ovunque."
+  },
+  "booking": {
+    "location": "PARTO DA",
+    "pickup": "PARTENZA IL",
+    "return": "RIENTRO IL",
+    "search": "PRENOTA",
+    "locationPlaceholder": "Roma, Milano, Napoli..."
+  },
+  "vans": {
+    "sectionTitle": "I NOSTRI CAMPER",
+    "sectionSubtitle": "Scegli il tuo compagno di viaggio.",
+    "details": "Dettagli",
+    "bookNow": "Prenota",
+    "info": "Info",
+    "capacity": "posti",
+    "perDay": "/giorno"
+  },
+  "footer": {
+    "newsletter": {
+      "title": "RESTA IN VIAGGIO",
+      "subtitle": "Iscriviti per itinerari esclusivi e offerte.",
+      "placeholder": "La tua email",
+      "cta": "ISCRIVITI"
+    },
+    "explore": {
+      "title": "ESPLORA",
+      "vans": "I Camper",
+      "routes": "Itinerari",
+      "groupTrips": "Viaggi di Gruppo"
+    },
+    "info": {
+      "title": "INFO",
+      "about": "Chi Siamo",
+      "faq": "FAQ",
+      "contact": "Contatti"
+    },
+    "legal": {
+      "title": "LEGALE",
+      "privacy": "Privacy",
+      "terms": "Termini",
+      "cookies": "Cookie"
+    },
+    "copyright": "© 2026 HOLO VAN. Tutti i diritti riservati."
+  },
+  "faq": {
+    "sectionTitle": "DOMANDE FREQUENTI"
   }
 }

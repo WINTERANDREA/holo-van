@@ -7,16 +7,17 @@ import type { Locale } from '@/i18n/routing';
 
 const locales: { code: Locale; label: string }[] = [
   { code: 'it', label: 'IT' },
+  { code: 'en', label: 'EN' },
   { code: 'ru', label: 'RU' },
   { code: 'ja', label: 'JP' },
 ];
 
 interface LanguageSwitcherProps {
-  variant?: 'light' | 'dark';
+  variant?: 'light' | 'dark' | 'auto';
   className?: string;
 }
 
-export function LanguageSwitcher({ variant = 'dark', className = '' }: LanguageSwitcherProps) {
+export function LanguageSwitcher({ variant = 'auto', className = '' }: LanguageSwitcherProps) {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -25,8 +26,18 @@ export function LanguageSwitcher({ variant = 'dark', className = '' }: LanguageS
     router.replace(pathname, { locale: newLocale });
   };
 
-  const activeColor = variant === 'dark' ? 'text-holo-charcoal' : 'text-white';
-  const inactiveColor = variant === 'dark' ? 'text-holo-charcoal/40' : 'text-white/40';
+  const getColors = () => {
+    if (variant === 'light') {
+      return { active: 'text-white', inactive: 'text-white/40' };
+    }
+    if (variant === 'dark') {
+      return { active: 'text-holo-charcoal', inactive: 'text-holo-charcoal/40' };
+    }
+    // auto: follows semantic tokens
+    return { active: 'text-primary', inactive: 'text-muted' };
+  };
+
+  const { active, inactive } = getColors();
 
   return (
     <div className={`flex gap-3 ${className}`}>
@@ -35,8 +46,8 @@ export function LanguageSwitcher({ variant = 'dark', className = '' }: LanguageS
           key={code}
           onClick={() => switchLocale(code)}
           className={`text-sm font-archivo-condensed font-semibold tracking-wider transition-colors ${
-            locale === code ? activeColor : inactiveColor
-          } hover:${activeColor}`}
+            locale === code ? active : inactive
+          }`}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
         >

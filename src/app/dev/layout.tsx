@@ -1,3 +1,4 @@
+import { ThemeProvider } from 'next-themes';
 import "../globals.css";
 
 export default function DevLayout({
@@ -6,9 +7,11 @@ export default function DevLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="font-archivo antialiased bg-holo-offwhite text-holo-charcoal">
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className="font-archivo antialiased bg-surface text-primary">
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

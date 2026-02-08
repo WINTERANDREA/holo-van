@@ -14,5 +14,51 @@
   "meta": {
     "title": "HOLO VAN - Только для путешественников",
     "description": "Аренда кемперов для настоящих путешественников. Свобода повсюду."
+  },
+  "booking": {
+    "location": "ОТКУДА",
+    "pickup": "ОТПРАВЛЕНИЕ",
+    "return": "ВОЗВРАТ",
+    "search": "ЗАБРОНИРОВАТЬ",
+    "locationPlaceholder": "Рим, Милан, Неаполь..."
+  },
+  "vans": {
+    "sectionTitle": "НАШИ КЕМПЕРЫ",
+    "sectionSubtitle": "Выберите своего попутчика.",
+    "details": "Подробнее",
+    "bookNow": "Забронировать",
+    "info": "Инфо",
+    "capacity": "мест",
+    "perDay": "/день"
+  },
+  "footer": {
+    "newsletter": {
+      "title": "ОСТАВАЙТЕСЬ В ПУТИ",
+      "subtitle": "Подпишитесь на эксклюзивные маршруты и предложения.",
+      "placeholder": "Ваш email",
+      "cta": "ПОДПИСАТЬСЯ"
+    },
+    "explore": {
+      "title": "ИССЛЕДОВАТЬ",
+      "vans": "Кемперы",
+      "routes": "Маршруты",
+      "groupTrips": "Групповые поездки"
+    },
+    "info": {
+      "title": "ИНФО",
+      "about": "О нас",
+      "faq": "FAQ",
+      "contact": "Контакты"
+    },
+    "legal": {
+      "title": "ПРАВОВАЯ ИНФОРМАЦИЯ",
+      "privacy": "Конфиденциальность",
+      "terms": "Условия",
+      "cookies": "Cookie"
+    },
+    "copyright": "© 2026 HOLO VAN. Все права защищены."
+  },
+  "faq": {
+    "sectionTitle": "ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ"
   }
 }

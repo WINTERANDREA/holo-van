@@ -14,5 +14,51 @@
   "meta": {
     "title": "HOLO VAN - 旅人専用",
     "description": "本物の旅人のためのキャンパーレンタル。自由はどこにでもある。"
+  },
+  "booking": {
+    "location": "出発地",
+    "pickup": "出発日",
+    "return": "返却日",
+    "search": "予約する",
+    "locationPlaceholder": "ローマ、ミラノ、ナポリ..."
+  },
+  "vans": {
+    "sectionTitle": "キャンパー一覧",
+    "sectionSubtitle": "旅の相棒を選ぼう。",
+    "details": "詳細",
+    "bookNow": "予約する",
+    "info": "情報",
+    "capacity": "人乗り",
+    "perDay": "/日"
+  },
+  "footer": {
+    "newsletter": {
+      "title": "旅を続けよう",
+      "subtitle": "限定ルートとオファーを受け取る。",
+      "placeholder": "メールアドレス",
+      "cta": "登録"
+    },
+    "explore": {
+      "title": "探索",
+      "vans": "キャンパー",
+      "routes": "ルート",
+      "groupTrips": "グループ旅行"
+    },
+    "info": {
+      "title": "情報",
+      "about": "私たちについて",
+      "faq": "FAQ",
+      "contact": "お問い合わせ"
+    },
+    "legal": {
+      "title": "法的情報",
+      "privacy": "プライバシー",
+      "terms": "利用規約",
+      "cookies": "Cookie"
+    },
+    "copyright": "© 2026 HOLO VAN. All rights reserved."
+  },
+  "faq": {
+    "sectionTitle": "よくある質問"
   }
 }

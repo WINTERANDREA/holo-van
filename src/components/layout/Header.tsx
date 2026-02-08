@@ -1,17 +1,29 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { useTheme } from 'next-themes';
 import { MobileMenu } from './MobileMenu';
 import { HamburgerButton } from '@/components/ui/HamburgerButton';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 import { MagneticLink } from '@/components/ui/MagneticLink';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const t = useTranslations('nav');
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const logoSrc = mounted && resolvedTheme === 'dark'
+    ? '/images/logo-horizontal-negative.png'
+    : '/images/logo-horizontal-positive.png';
 
   return (
     <>
@@ -36,7 +48,7 @@ export function Header() {
             whileTap={{ scale: 0.98 }}
           >
             <Image
-              src="/images/logo-horizontal-positive.png"
+              src={logoSrc}
               alt="HOLO VAN"
               width={120}
               height={40}
@@ -45,18 +57,22 @@ export function Header() {
             />
           </motion.a>
 
-          {/* Right nav links + language switcher (desktop) */}
+          {/* Right nav links + theme toggle + language switcher (desktop) */}
           <div className="hidden md:flex items-center gap-8">
             <MagneticLink href="#">{t('routes')}</MagneticLink>
             <MagneticLink href="#">{t('contact')}</MagneticLink>
+            <ThemeToggle />
             <LanguageSwitcher />
           </div>
 
-          {/* Mobile hamburger */}
-          <HamburgerButton
-            isOpen={isMobileMenuOpen}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          />
+          {/* Mobile: theme toggle + hamburger */}
+          <div className="flex md:hidden items-center gap-4">
+            <ThemeToggle />
+            <HamburgerButton
+              isOpen={isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            />
+          </div>
         </div>
       </motion.header>
 
