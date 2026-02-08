@@ -51,7 +51,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-50 bg-holo-charcoal overflow-hidden"
+          className="fixed inset-0 z-50 bg-surface overflow-hidden"
           variants={menuVariants}
           initial="closed"
           animate="open"
@@ -67,13 +67,13 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             aria-label="Close menu"
           >
             <motion.span
-              className="absolute w-8 h-0.5 bg-white"
+              className="absolute w-8 h-0.5 bg-primary"
               initial={{ rotate: 0 }}
               animate={{ rotate: 45 }}
               transition={{ duration: 0.3 }}
             />
             <motion.span
-              className="absolute w-8 h-0.5 bg-white"
+              className="absolute w-8 h-0.5 bg-primary"
               initial={{ rotate: 0 }}
               animate={{ rotate: -45 }}
               transition={{ duration: 0.3 }}
@@ -107,7 +107,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               >
                 <Link
                   href={href}
-                  className="block font-archivo-condensed font-semibold text-5xl sm:text-6xl text-white py-4 hover:holographic-text transition-all duration-300"
+                  className="block font-archivo-condensed font-semibold text-5xl sm:text-6xl text-primary py-4 hover:holographic-text transition-all duration-300"
                   onClick={onClose}
                 >
                   {t(key)}
@@ -123,7 +123,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
-            <LanguageSwitcher variant="light" />
+            <LanguageSwitcher variant="auto" />
           </motion.div>
         </motion.div>
       )}

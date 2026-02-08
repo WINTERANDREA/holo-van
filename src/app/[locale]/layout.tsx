@@ -4,7 +4,6 @@ import { getMessages, setRequestLocale } from 'next-intl/server';
 import { ThemeProvider } from 'next-themes';
 import { routing } from '@/i18n/routing';
 import { Footer } from '@/components/layout/Footer';
-import { PageTransition } from '@/components/effects/PageTransition';
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -36,9 +35,7 @@ export default async function LocaleLayout({
       <body className="font-archivo antialiased bg-surface text-primary">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
           <NextIntlClientProvider messages={messages}>
-            <PageTransition>
-              {children}
-            </PageTransition>
+            {children}
             <Footer />
           </NextIntlClientProvider>
         </ThemeProvider>
