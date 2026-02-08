@@ -49,7 +49,7 @@ export function Hero() {
           className="mt-10 md:mt-12"
         >
           <motion.button
-            className="inline-block px-8 py-4 bg-holo-charcoal dark:bg-holo-offwhite text-white dark:text-holo-charcoal font-archivo-condensed font-semibold tracking-wider relative overflow-hidden group cursor-pointer"
+            className="inline-block px-8 py-4 bg-primary text-surface font-archivo-condensed font-semibold tracking-wider relative overflow-hidden group cursor-pointer"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => {}}
@@ -69,7 +69,7 @@ export function Hero() {
         transition={{ delay: 1.5, duration: 0.5 }}
       >
         <motion.div
-          className="w-6 h-10 border-2 border-border rounded-full flex justify-center pt-2"
+          className="w-6 h-10 border-2 border-muted rounded-full flex justify-center pt-2"
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >

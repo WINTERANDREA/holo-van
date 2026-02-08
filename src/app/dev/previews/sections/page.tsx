@@ -136,13 +136,13 @@ function SectionVariantB() {
         <div className="absolute inset-0 holographic-overlay opacity-60" />
         <div className="absolute inset-0 backdrop-blur-3xl" />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <h2 className="font-archivo-condensed font-semibold text-fluid-h2 text-holo-charcoal uppercase">
+          <h2 className="font-archivo-condensed font-semibold text-fluid-h2 text-primary uppercase">
             PRONTO A PARTIRE?
           </h2>
-          <p className="font-archivo text-holo-charcoal/70 mt-4">
+          <p className="font-archivo text-secondary mt-4">
             Scegli il tuo van. Scegli la tua avventura. Il resto viene da s&eacute;.
           </p>
-          <button className="mt-8 px-8 py-4 bg-holo-charcoal text-white font-archivo-condensed font-semibold tracking-wider">
+          <button className="mt-8 px-8 py-4 bg-primary text-surface font-archivo-condensed font-semibold tracking-wider">
             PRENOTA ORA
           </button>
         </div>

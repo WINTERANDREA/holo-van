@@ -111,25 +111,25 @@ function HeroVariantB() {
         {/* Content - split layout */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="font-archivo-condensed text-sm tracking-[0.3em] text-holo-charcoal/60 mb-4">
+            <p className="font-archivo-condensed text-sm tracking-[0.3em] text-secondary mb-4">
               TRAVELLERS ONLY
             </p>
-            <h1 className="font-archivo-condensed font-semibold text-fluid-h1 text-holo-charcoal tracking-tight leading-[0.9]">
+            <h1 className="font-archivo-condensed font-semibold text-fluid-h1 text-primary tracking-tight leading-[0.9]">
               IL VIAGGIO<br />INIZIA<br />ADESSO.
             </h1>
-            <p className="mt-6 font-archivo text-fluid-body-lg text-holo-charcoal/70 max-w-md">
+            <p className="mt-6 font-archivo text-fluid-body-lg text-secondary max-w-md">
               La libert&agrave; &egrave; ovunque. Noi ti diamo solo il mezzo per raggiungerla.
             </p>
             <div className="mt-8">
-              <button className="px-8 py-4 bg-holo-charcoal text-white font-archivo-condensed font-semibold tracking-wider">
+              <button className="px-8 py-4 bg-primary text-surface font-archivo-condensed font-semibold tracking-wider">
                 SCOPRI I CAMPER
               </button>
             </div>
           </div>
           <div className="flex items-center justify-center">
             {/* Placeholder for van image/3D */}
-            <div className="w-full max-w-md aspect-[4/3] bg-holo-charcoal/10 rounded-2xl flex items-center justify-center border-2 border-dashed border-holo-charcoal/20">
-              <span className="font-archivo text-sm text-holo-charcoal/40">Van image / 3D viewer</span>
+            <div className="w-full max-w-md aspect-[4/3] bg-primary/10 rounded-2xl flex items-center justify-center border-2 border-dashed border-primary/20">
+              <span className="font-archivo text-sm text-muted">Van image / 3D viewer</span>
             </div>
           </div>
         </div>
