@@ -34,7 +34,7 @@ export default async function CamperPage({ params }: PageProps) {
 
         {/* Van Grid */}
         <section className="pb-24 px-6 bg-surface">
-          <CatalogGrid />
+          <CatalogGrid locale={locale} />
         </section>
       </main>
     </>

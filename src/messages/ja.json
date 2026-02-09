@@ -29,7 +29,13 @@
     "bookNow": "予約する",
     "info": "情報",
     "capacity": "人乗り",
-    "perDay": "/日"
+    "perDay": "/日",
+    "vanTypes": {
+      "camper-van": "キャンパーバン",
+      "motorhome": "モーターホーム",
+      "mini-camper": "ミニキャンパー",
+      "large-van": "大型バン"
+    }
   },
   "footer": {
     "newsletter": {
@@ -56,7 +62,7 @@
       "terms": "利用規約",
       "cookies": "Cookie"
     },
-    "copyright": "© 2026 HOLO VAN. All rights reserved."
+    "copyright": "© 2026 HOLO VAN. 無断複写・転載を禁じます。"
   },
   "whyHoloVan": {
     "sectionTitle": "HOLO VANを選ぶ理由",
@@ -146,14 +152,45 @@
       "title": "キャンパー一覧",
       "subtitle": "すべてのバンは自由の約束。あなたのを選んで。",
       "viewDetails": "詳しく見る",
-      "backToCatalog": "一覧に戻る"
+      "backToCatalog": "一覧に戻る",
+      "filters": {
+        "allTypes": "すべてのタイプ",
+        "allCapacities": "すべて",
+        "sortLabel": "並び替え",
+        "sortDefault": "おすすめ",
+        "sortPriceLow": "価格：安い順",
+        "sortPriceHigh": "価格：高い順",
+        "noResults": "条件に合うキャンパーがありません",
+        "noResultsHint": "フィルターを変更してみてください。",
+        "clearFilters": "フィルターをクリア",
+        "capacityLabel": "{count}人乗り"
+      }
     },
     "vanDetail": {
       "comingSoon": "詳細準備中",
       "comingSoonText": "このキャンパーの詳細を準備しています。もうすぐ公開です。",
       "specs": "スペック",
       "features": "特徴",
-      "book": "このキャンパーを予約"
+      "book": "このキャンパーを予約",
+      "description": "説明",
+      "gallery": "ギャラリー",
+      "specLabels": {
+        "sleeps": "就寝人数",
+        "seats": "座席数",
+        "engine": "エンジン",
+        "transmission": "トランスミッション",
+        "length": "全長",
+        "year": "年式"
+      },
+      "transmissions": {
+        "manual": "マニュアル",
+        "automatic": "オートマ"
+      },
+      "relatedTitle": "こちらもおすすめ",
+      "priceFrom": "から",
+      "perDay": "/日",
+      "stickyBook": "今すぐ予約",
+      "photosComingSoon": "写真準備中"
     },
     "itineraries": {
       "title": "ルート",
@@ -176,6 +213,49 @@
       "title": "利用規約",
       "lastUpdated": "最終更新: 2026年2月",
       "content": "これらの規約は、holo-van.itウェブサイトおよびHOLO VANが提供するキャンパーレンタルサービスのご利用を規定します。当サイトをご利用いただくことで、これらの規約に同意したものとみなされます。正式なサービス開始前に完全な文書が公開されます。"
+    }
+  },
+  "vanFeatures": {
+    "popup-roof": "ポップアップルーフ",
+    "kitchen": "ビルトインキッチン",
+    "outdoor-shower": "アウトドアシャワー",
+    "indoor-bathroom": "室内バスルーム",
+    "double-bed": "ダブルベッド",
+    "full-kitchen": "フルキッチン",
+    "compact": "コンパクト",
+    "pull-out-kitchen": "引き出しキッチン",
+    "solar-panels": "ソーラーパネル",
+    "spacious": "広々",
+    "modern-design": "モダンデザイン",
+    "wifi": "WiFi",
+    "easy-to-drive": "運転しやすい",
+    "air-conditioning": "エアコン",
+    "awning": "オーニング"
+  },
+  "vanData": {
+    "california-ocean": {
+      "description": "California Oceanは自由と快適さの完璧なバランス。星空の下のポップアップルーフ、海を眺めながらのビルトインキッチン、ビーチの後に砂を流すアウトドアシャワー。"
+    },
+    "grand-california": {
+      "description": "Grand Californiaは走る我が家。室内バスルーム、固定ダブルベッド、フルキッチン。妥協なく旅したい、でも正しいスピリットを持つ人のために。"
+    },
+    "caddy-california": {
+      "description": "小さく、機敏で、二人にぴったり。Caddy Californiaはどこでも駐車でき、村の細い路地を抜け、大きなバンでは行けない場所へ連れて行く。ミニマリズムこそ自由。"
+    },
+    "crafter-camper": {
+      "description": "Crafterは本格的な冒険のために。すべてのための空間、完全な自律のためのソーラーパネル、道の日々の後に違いを生むバスルーム。"
+    },
+    "multivan-style": {
+      "description": "コンテンポラリーデザイン、車載テクノロジー、ポップアップルーフの快適さ。Multivan Styleは冒険心を失わずスタイリッシュに旅したい人のために。"
+    },
+    "california-beach": {
+      "description": "エッセンシャルでストレート。California Beachは旅が道にあると知っている人のためのバン。運転しやすく、コンパクトで、どんな冒険にも準備万端。"
+    },
+    "sprinter-explorer": {
+      "description": "Sprinter Explorerは長距離のために作られた。ソーラーパネル、フルキッチン、どんな気候にも対応するエアコン。イタリアを北から南まで横断する理想の相棒。"
+    },
+    "mini-countryman-camp": {
+      "description": "フリート最小だが、大きな心を持つ。Mini Countryman Campはドライブ好き、曲がりくねった道、星空の下のルーフテントのシンプルさを愛する人のために。"
     }
   }
 }

@@ -29,7 +29,13 @@
     "bookNow": "Prenota",
     "info": "Info",
     "capacity": "posti",
-    "perDay": "/giorno"
+    "perDay": "/giorno",
+    "vanTypes": {
+      "camper-van": "CAMPER VAN",
+      "motorhome": "MOTORHOME",
+      "mini-camper": "MINI CAMPER",
+      "large-van": "FURGONE GRANDE"
+    }
   },
   "footer": {
     "newsletter": {
@@ -146,14 +152,45 @@
       "title": "I NOSTRI CAMPER",
       "subtitle": "Ogni van è una promessa di libertà. Scegli il tuo.",
       "viewDetails": "SCOPRI",
-      "backToCatalog": "TORNA AI CAMPER"
+      "backToCatalog": "TORNA AI CAMPER",
+      "filters": {
+        "allTypes": "TUTTI I TIPI",
+        "allCapacities": "TUTTI",
+        "sortLabel": "ORDINA",
+        "sortDefault": "CONSIGLIATI",
+        "sortPriceLow": "PREZZO: BASSO → ALTO",
+        "sortPriceHigh": "PREZZO: ALTO → BASSO",
+        "noResults": "NESSUN CAMPER CORRISPONDE AI FILTRI",
+        "noResultsHint": "Prova a modificare i filtri per più opzioni.",
+        "clearFilters": "RIMUOVI FILTRI",
+        "capacityLabel": "{count} POSTI"
+      }
     },
     "vanDetail": {
       "comingSoon": "Dettagli in arrivo",
       "comingSoonText": "Stiamo preparando tutto per mostrarti questo van nel dettaglio. Torna presto.",
       "specs": "SPECIFICHE",
       "features": "CARATTERISTICHE",
-      "book": "PRENOTA QUESTO VAN"
+      "book": "PRENOTA QUESTO VAN",
+      "description": "DESCRIZIONE",
+      "gallery": "GALLERIA",
+      "specLabels": {
+        "sleeps": "POSTI LETTO",
+        "seats": "POSTI",
+        "engine": "MOTORE",
+        "transmission": "CAMBIO",
+        "length": "LUNGHEZZA",
+        "year": "ANNO"
+      },
+      "transmissions": {
+        "manual": "Manuale",
+        "automatic": "Automatico"
+      },
+      "relatedTitle": "POTREBBE PIACERTI ANCHE",
+      "priceFrom": "da",
+      "perDay": "/giorno",
+      "stickyBook": "PRENOTA ORA",
+      "photosComingSoon": "Foto in arrivo"
     },
     "itineraries": {
       "title": "ITINERARI",
@@ -176,6 +213,49 @@
       "title": "TERMINI E CONDIZIONI",
       "lastUpdated": "Ultimo aggiornamento: Febbraio 2026",
       "content": "Questi termini regolano l'utilizzo del sito web holo-van.it e dei servizi di noleggio camper forniti da HOLO VAN. Utilizzando il nostro sito, accetti di essere vincolato da questi termini. Il documento completo sarà disponibile prima del lancio ufficiale del servizio."
+    }
+  },
+  "vanFeatures": {
+    "popup-roof": "Tetto pop-up",
+    "kitchen": "Cucina integrata",
+    "outdoor-shower": "Doccia esterna",
+    "indoor-bathroom": "Bagno integrato",
+    "double-bed": "Letto matrimoniale",
+    "full-kitchen": "Cucina full",
+    "compact": "Compatto",
+    "pull-out-kitchen": "Cucina estraibile",
+    "solar-panels": "Pannelli solari",
+    "spacious": "Spazioso",
+    "modern-design": "Design moderno",
+    "wifi": "WiFi",
+    "easy-to-drive": "Facile da guidare",
+    "air-conditioning": "Climatizzatore",
+    "awning": "Tenda da sole"
+  },
+  "vanData": {
+    "california-ocean": {
+      "description": "Il California Ocean è il perfetto equilibrio tra libertà e comfort. Tetto pop-up per le notti stellate, cucina integrata per i pranzi vista mare e doccia esterna per togliersi la sabbia dopo una giornata in spiaggia."
+    },
+    "grand-california": {
+      "description": "Il Grand California è la tua casa su ruote. Bagno integrato, letto matrimoniale fisso e cucina completa. Per chi vuole viaggiare senza rinunce, ma con lo spirito giusto."
+    },
+    "caddy-california": {
+      "description": "Piccolo, agile, perfetto per due. Il Caddy California si parcheggia ovunque, si infila nelle stradine dei borghi e ti porta dove i grandi non arrivano. Minimalismo che è libertà."
+    },
+    "crafter-camper": {
+      "description": "Il Crafter è per le avventure serie. Spazio per tutto e per tutti, pannelli solari per l'autonomia totale e un bagno che fa la differenza dopo giorni di strada."
+    },
+    "multivan-style": {
+      "description": "Design contemporaneo, tecnologia di bordo e il comfort di un tetto pop-up. Il Multivan Style è per chi vuole viaggiare con stile senza perdere lo spirito dell'avventura."
+    },
+    "california-beach": {
+      "description": "Essenziale e diretto, il California Beach è il van per chi sa che il viaggio è nella strada, non nelle comodità. Facile da guidare, compatto e pronto per qualsiasi avventura."
+    },
+    "sprinter-explorer": {
+      "description": "Lo Sprinter Explorer è costruito per le lunghe distanze. Pannelli solari, cucina completa e climatizzatore per affrontare qualsiasi clima. Il compagno ideale per attraversare l'Italia da nord a sud."
+    },
+    "mini-countryman-camp": {
+      "description": "Il più piccolo della flotta, ma con un cuore grande. Il Mini Countryman Camp è per chi ama la guida, i percorsi tortuosi e la semplicità di un tetto tenda sotto le stelle."
     }
   }
 }

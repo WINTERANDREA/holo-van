@@ -6,46 +6,22 @@ import { CarouselDots } from '@/components/ui/CarouselDots';
 import { ScrollReveal } from '@/components/effects/ScrollReveal';
 import { useCarousel } from '@/hooks/useCarousel';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
+import { Link } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
-
-const mockVans: VanData[] = [
-  {
-    slug: 'california-ocean',
-    name: 'California Ocean',
-    type: 'Camper Van',
-    capacity: '4 posti',
-    pricePerDay: '€120/giorno',
-    features: ['Tetto pop-up', 'Cucina integrata', 'Doccia esterna'],
-  },
-  {
-    slug: 'grand-california',
-    name: 'Grand California',
-    type: 'Motorhome',
-    capacity: '4 posti',
-    pricePerDay: '€150/giorno',
-    features: ['Bagno integrato', 'Letto matrimoniale', 'Cucina full'],
-  },
-  {
-    slug: 'caddy-california',
-    name: 'Caddy California',
-    type: 'Mini Camper',
-    capacity: '2 posti',
-    pricePerDay: '€80/giorno',
-    features: ['Compatto', 'Tetto pop-up', 'Cucina estraibile'],
-  },
-];
 
 interface VanShowcaseProps {
   title?: string;
   subtitle?: string;
-  vans?: VanData[];
+  vans: VanData[];
+  cardLabels?: { details?: string; book?: string; info?: string };
   className?: string;
 }
 
 export function VanShowcase({
   title = 'I NOSTRI CAMPER',
   subtitle = 'Scegli il tuo compagno di viaggio.',
-  vans = mockVans,
+  vans,
+  cardLabels,
   className,
 }: VanShowcaseProps) {
   const { matches: prefersReducedMotion } = useMediaQuery('(prefers-reduced-motion: reduce)');
@@ -72,7 +48,9 @@ export function VanShowcase({
             <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory px-6 -mx-6">
               {vans.map((van) => (
                 <div key={van.slug} className="snap-center flex-shrink-0 w-[calc(100%-56px)]">
-                  <VanCard van={van} variant="clean" />
+                  <Link href={`/camper/${van.slug}`}>
+                    <VanCard van={van} variant="clean" labels={cardLabels} />
+                  </Link>
                 </div>
               ))}
             </div>
@@ -95,7 +73,9 @@ export function VanShowcase({
                       className="flex-shrink-0"
                       style={{ width: carousel.cardWidth || 'calc(100% - 56px)' }}
                     >
-                      <VanCard van={van} variant="clean" />
+                      <Link href={`/camper/${van.slug}`}>
+                        <VanCard van={van} variant="clean" labels={cardLabels} />
+                      </Link>
                     </div>
                   ))}
                 </motion.div>
@@ -113,7 +93,9 @@ export function VanShowcase({
         <div className="hidden md:grid md:grid-cols-3 gap-8">
           {vans.map((van, i) => (
             <ScrollReveal key={van.slug} delay={i * 0.15}>
-              <VanCard van={van} variant="clean" />
+              <Link href={`/camper/${van.slug}`}>
+                <VanCard van={van} variant="clean" labels={cardLabels} />
+              </Link>
             </ScrollReveal>
           ))}
         </div>

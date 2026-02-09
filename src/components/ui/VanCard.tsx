@@ -23,6 +23,7 @@ interface VanCardProps {
   van: VanData;
   variant?: VanCardVariant;
   className?: string;
+  labels?: { details?: string; book?: string; info?: string };
 }
 
 function ImagePlaceholder() {
@@ -33,7 +34,7 @@ function ImagePlaceholder() {
   );
 }
 
-function CleanCard({ van, className }: { van: VanData; className?: string }) {
+function CleanCard({ van, className, labels }: { van: VanData; className?: string; labels?: VanCardProps['labels'] }) {
   return (
     <motion.div
       className={cn('bg-surface-elevated border border-border rounded-xl overflow-hidden', className)}
@@ -57,7 +58,7 @@ function CleanCard({ van, className }: { van: VanData; className?: string }) {
           ))}
         </div>
         <Button variant="primary" size="md" className="w-full mt-6">
-          Dettagli
+          {labels?.details ?? 'Dettagli'}
         </Button>
       </div>
     </motion.div>
@@ -95,7 +96,7 @@ function OverlayCard({ van, className }: { van: VanData; className?: string }) {
   );
 }
 
-function HolographicCard({ van, className }: { van: VanData; className?: string }) {
+function HolographicCard({ van, className, labels }: { van: VanData; className?: string; labels?: VanCardProps['labels'] }) {
   return (
     <motion.div
       className={cn('relative bg-surface-elevated rounded-xl overflow-hidden', className)}
@@ -122,10 +123,10 @@ function HolographicCard({ van, className }: { van: VanData; className?: string 
         </div>
         <div className="flex gap-3 mt-6">
           <Button variant="primary" size="md" className="flex-1">
-            Prenota
+            {labels?.book ?? 'Prenota'}
           </Button>
           <Button variant="secondary" size="md">
-            Info
+            {labels?.info ?? 'Info'}
           </Button>
         </div>
       </div>
@@ -133,13 +134,13 @@ function HolographicCard({ van, className }: { van: VanData; className?: string 
   );
 }
 
-export function VanCard({ van, variant = 'clean', className }: VanCardProps) {
+export function VanCard({ van, variant = 'clean', className, labels }: VanCardProps) {
   switch (variant) {
     case 'overlay':
       return <OverlayCard van={van} className={className} />;
     case 'holographic':
-      return <HolographicCard van={van} className={className} />;
+      return <HolographicCard van={van} className={className} labels={labels} />;
     default:
-      return <CleanCard van={van} className={className} />;
+      return <CleanCard van={van} className={className} labels={labels} />;
   }
 }

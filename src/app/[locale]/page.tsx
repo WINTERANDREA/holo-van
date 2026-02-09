@@ -5,6 +5,8 @@ import { Header } from '@/components/layout/Header';
 import { Hero } from '@/components/sections/Hero';
 import { VanShowcase } from '@/components/sections/VanShowcase';
 import { WhyHoloVan } from '@/components/sections/WhyHoloVan';
+import { TestVideoSection } from '@/components/sections/TestVideoSection';
+import { getAllVans, toVanCardData } from '@/lib/vans';
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -17,6 +19,18 @@ export default async function HomePage({ params }: PageProps) {
   setRequestLocale(locale);
 
   const t = await getTranslations('vans');
+  const tFeatures = await getTranslations('vanFeatures');
+
+  // Get first 3 vans from central data, mapped to VanCard format
+  const showcaseVans = getAllVans()
+    .slice(0, 3)
+    .map((van) => toVanCardData(van, locale, (k) => tFeatures(k), (k) => t(k)));
+
+  const cardLabels = {
+    details: t('details'),
+    book: t('bookNow'),
+    info: t('info'),
+  };
 
   return (
     <>
@@ -27,8 +41,11 @@ export default async function HomePage({ params }: PageProps) {
         <VanShowcase
           title={t('sectionTitle')}
           subtitle={t('sectionSubtitle')}
+          vans={showcaseVans}
+          cardLabels={cardLabels}
         />
         <WhyHoloVan />
+        <TestVideoSection />
       </main>
     </>
   );

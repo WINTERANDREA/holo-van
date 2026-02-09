@@ -29,7 +29,13 @@
     "bookNow": "Book Now",
     "info": "Info",
     "capacity": "seats",
-    "perDay": "/day"
+    "perDay": "/day",
+    "vanTypes": {
+      "camper-van": "CAMPER VAN",
+      "motorhome": "MOTORHOME",
+      "mini-camper": "MINI CAMPER",
+      "large-van": "LARGE VAN"
+    }
   },
   "footer": {
     "newsletter": {
@@ -146,14 +152,45 @@
       "title": "OUR VANS",
       "subtitle": "Every van is a promise of freedom. Choose yours.",
       "viewDetails": "DISCOVER",
-      "backToCatalog": "BACK TO VANS"
+      "backToCatalog": "BACK TO VANS",
+      "filters": {
+        "allTypes": "ALL TYPES",
+        "allCapacities": "ALL",
+        "sortLabel": "SORT",
+        "sortDefault": "RECOMMENDED",
+        "sortPriceLow": "PRICE: LOW → HIGH",
+        "sortPriceHigh": "PRICE: HIGH → LOW",
+        "noResults": "NO VANS MATCH YOUR FILTERS",
+        "noResultsHint": "Try adjusting the filters for more options.",
+        "clearFilters": "CLEAR FILTERS",
+        "capacityLabel": "{count} SEATS"
+      }
     },
     "vanDetail": {
       "comingSoon": "Details coming soon",
       "comingSoonText": "We're getting everything ready to show you this van in detail. Check back soon.",
       "specs": "SPECS",
       "features": "FEATURES",
-      "book": "BOOK THIS VAN"
+      "book": "BOOK THIS VAN",
+      "description": "DESCRIPTION",
+      "gallery": "GALLERY",
+      "specLabels": {
+        "sleeps": "SLEEPS",
+        "seats": "SEATS",
+        "engine": "ENGINE",
+        "transmission": "TRANSMISSION",
+        "length": "LENGTH",
+        "year": "YEAR"
+      },
+      "transmissions": {
+        "manual": "Manual",
+        "automatic": "Automatic"
+      },
+      "relatedTitle": "YOU MIGHT ALSO LIKE",
+      "priceFrom": "from",
+      "perDay": "/day",
+      "stickyBook": "BOOK NOW",
+      "photosComingSoon": "Photos coming soon"
     },
     "itineraries": {
       "title": "ROUTES",
@@ -176,6 +213,49 @@
       "title": "TERMS & CONDITIONS",
       "lastUpdated": "Last updated: February 2026",
       "content": "These terms govern your use of the holo-van.it website and the camper van rental services provided by HOLO VAN. By using our site, you agree to be bound by these terms. The full document will be available before the official service launch."
+    }
+  },
+  "vanFeatures": {
+    "popup-roof": "Pop-up roof",
+    "kitchen": "Built-in kitchen",
+    "outdoor-shower": "Outdoor shower",
+    "indoor-bathroom": "Indoor bathroom",
+    "double-bed": "Double bed",
+    "full-kitchen": "Full kitchen",
+    "compact": "Compact",
+    "pull-out-kitchen": "Pull-out kitchen",
+    "solar-panels": "Solar panels",
+    "spacious": "Spacious",
+    "modern-design": "Modern design",
+    "wifi": "WiFi",
+    "easy-to-drive": "Easy to drive",
+    "air-conditioning": "Air conditioning",
+    "awning": "Awning"
+  },
+  "vanData": {
+    "california-ocean": {
+      "description": "The California Ocean is the perfect balance of freedom and comfort. Pop-up roof for starry nights, built-in kitchen for lunches with a sea view, and an outdoor shower to wash off the sand after a day at the beach."
+    },
+    "grand-california": {
+      "description": "The Grand California is your home on wheels. Indoor bathroom, fixed double bed and full kitchen. For those who want to travel without compromise, but with the right spirit."
+    },
+    "caddy-california": {
+      "description": "Small, nimble, perfect for two. The Caddy California parks anywhere, squeezes through narrow village streets and takes you where the big ones can't. Minimalism that is freedom."
+    },
+    "crafter-camper": {
+      "description": "The Crafter is for serious adventures. Space for everything and everyone, solar panels for total autonomy and a bathroom that makes all the difference after days on the road."
+    },
+    "multivan-style": {
+      "description": "Contemporary design, onboard technology and the comfort of a pop-up roof. The Multivan Style is for those who want to travel in style without losing the spirit of adventure."
+    },
+    "california-beach": {
+      "description": "Essential and straightforward, the California Beach is the van for those who know the journey is in the road, not the amenities. Easy to drive, compact and ready for any adventure."
+    },
+    "sprinter-explorer": {
+      "description": "The Sprinter Explorer is built for long distances. Solar panels, full kitchen and air conditioning to handle any climate. The ideal companion for crossing Italy from north to south."
+    },
+    "mini-countryman-camp": {
+      "description": "The smallest in the fleet, but with a big heart. The Mini Countryman Camp is for those who love driving, winding roads and the simplicity of a rooftop tent under the stars."
     }
   }
 }

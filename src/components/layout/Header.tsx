@@ -64,11 +64,17 @@ export function Header({ heroStyle }: HeaderProps) {
           'max-w-7xl mx-auto flex items-center justify-between transition-colors duration-300',
           forceDarkAtTop ? 'text-holo-charcoal' : 'text-primary',
         )}>
-          {/* Left nav links (desktop) */}
+          {/* Left nav links (desktop) / hamburger (mobile) */}
           <nav className="hidden md:flex items-center gap-8">
             <MagneticLink href="/camper">{t('vans')}</MagneticLink>
             <MagneticLink href="/prenota">{t('book')}</MagneticLink>
           </nav>
+          <div className="md:hidden">
+            <HamburgerButton
+              isOpen={isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            />
+          </div>
 
           {/* Center: Logo (always centered) */}
           <Link
@@ -93,13 +99,9 @@ export function Header({ heroStyle }: HeaderProps) {
             <LanguageSwitcher variant={forceDarkAtTop ? 'dark' : 'auto'} />
           </div>
 
-          {/* Mobile: theme toggle + hamburger */}
-          <div className="flex md:hidden items-center gap-4">
+          {/* Mobile: theme toggle (right side) */}
+          <div className="md:hidden">
             <ThemeToggle />
-            <HamburgerButton
-              isOpen={isMobileMenuOpen}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            />
           </div>
         </div>
       </motion.header>
