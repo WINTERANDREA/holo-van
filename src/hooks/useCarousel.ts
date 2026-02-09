@@ -37,16 +37,15 @@ export function useCarousel({ itemCount, gap = 16, peekOffset = 56 }: UseCarouse
     (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
       const velocity = info.velocity.x;
       const offset = info.offset.x;
-      const swipeThreshold = cardWidth * 0.2;
 
       let newIndex = activeIndex;
 
       // Velocity-based snap (fast flick)
-      if (Math.abs(velocity) > 500) {
+      if (Math.abs(velocity) > 300) {
         newIndex = velocity < 0 ? activeIndex + 1 : activeIndex - 1;
       }
-      // Distance-based fallback (slow drag)
-      else if (Math.abs(offset) > swipeThreshold) {
+      // Distance-based fallback (slow drag past 10% of card width)
+      else if (Math.abs(offset) > cardWidth * 0.1) {
         newIndex = offset < 0 ? activeIndex + 1 : activeIndex - 1;
       }
 
