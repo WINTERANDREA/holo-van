@@ -16,17 +16,23 @@ export function WhyHoloVan({ className }: WhyHoloVanProps) {
     {
       key: 'freedom',
       sticker: 'stay-wild' as const,
-      rotation: -6,
+      size: 160,
+      rotation: -8,
+      offset: { x: -30, y: 10 },
     },
     {
       key: 'routes',
       sticker: 'more-adventure' as const,
-      rotation: 4,
+      size: 150,
+      rotation: 6,
+      offset: { x: 20, y: -5 },
     },
     {
       key: 'community',
       sticker: 'real-travellers' as const,
-      rotation: -3,
+      size: 170,
+      rotation: -4,
+      offset: { x: -15, y: 15 },
     },
   ];
 
@@ -45,15 +51,21 @@ export function WhyHoloVan({ className }: WhyHoloVanProps) {
         </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
-          {pillars.map(({ key, sticker, rotation }, i) => (
+          {pillars.map(({ key, sticker, size, rotation, offset }, i) => (
             <ScrollReveal key={key} delay={i * 0.15}>
               <div className="flex flex-col items-center text-center">
-                <div className="mb-6">
+                <div
+                  className="mb-4"
+                  style={{ transform: `translate(${offset.x}px, ${offset.y}px)` }}
+                >
                   <StickerBadge
                     sticker={sticker}
-                    size={96}
+                    size={size}
                     rotation={rotation}
                     animate
+                    entrance
+                    interactive
+                    entranceDelay={0.3 + i * 0.2}
                   />
                 </div>
                 <h3 className="font-archivo-condensed font-semibold text-xl uppercase tracking-wider text-primary mb-3">

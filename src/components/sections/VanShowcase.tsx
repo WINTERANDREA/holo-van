@@ -1,7 +1,11 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { VanCard, type VanData } from '@/components/ui/VanCard';
+import { CarouselDots } from '@/components/ui/CarouselDots';
 import { ScrollReveal } from '@/components/effects/ScrollReveal';
+import { useCarousel } from '@/hooks/useCarousel';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
 
 const mockVans: VanData[] = [
@@ -44,6 +48,9 @@ export function VanShowcase({
   vans = mockVans,
   className,
 }: VanShowcaseProps) {
+  const { matches: prefersReducedMotion } = useMediaQuery('(prefers-reduced-motion: reduce)');
+  const carousel = useCarousel({ itemCount: vans.length, gap: 16, peekOffset: 56 });
+
   return (
     <section className={cn('py-24 px-6 bg-surface', className)}>
       <div className="max-w-7xl mx-auto">
@@ -58,13 +65,48 @@ export function VanShowcase({
           </div>
         </ScrollReveal>
 
-        {/* Mobile: horizontal scroll */}
-        <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory md:hidden -mx-6 px-6">
-          {vans.map((van, i) => (
-            <ScrollReveal key={van.slug} delay={i * 0.1} className="snap-start flex-shrink-0 w-[80vw] max-w-sm">
-              <VanCard van={van} variant="clean" />
+        {/* Mobile: Framer Motion drag carousel (reduced-motion: CSS scroll fallback) */}
+        <div className="md:hidden">
+          {prefersReducedMotion ? (
+            /* Reduced motion fallback — simple CSS scroll */
+            <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory px-6 -mx-6">
+              {vans.map((van) => (
+                <div key={van.slug} className="snap-center flex-shrink-0 w-[calc(100%-56px)]">
+                  <VanCard van={van} variant="clean" />
+                </div>
+              ))}
+            </div>
+          ) : (
+            /* Full carousel with spring physics */
+            <ScrollReveal>
+              <div className="overflow-hidden" ref={carousel.containerRef}>
+                <motion.div
+                  className="flex gap-4 carousel-track"
+                  drag="x"
+                  dragElastic={0.15}
+                  dragConstraints={carousel.dragConstraints}
+                  onDragEnd={carousel.handleDragEnd}
+                  animate={{ x: carousel.getOffset() }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 30, mass: 0.8 }}
+                >
+                  {vans.map((van) => (
+                    <div
+                      key={van.slug}
+                      className="flex-shrink-0"
+                      style={{ width: carousel.cardWidth || 'calc(100% - 56px)' }}
+                    >
+                      <VanCard van={van} variant="clean" />
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
             </ScrollReveal>
-          ))}
+          )}
+          <CarouselDots
+            count={vans.length}
+            activeIndex={carousel.activeIndex}
+            onDotClick={carousel.setActiveIndex}
+          />
         </div>
 
         {/* Desktop: 3-column grid */}

@@ -17,7 +17,7 @@ export function HamburgerButton({ isOpen, onClick, className = '' }: HamburgerBu
       aria-expanded={isOpen}
     >
       <motion.span
-        className="absolute left-0 w-full h-0.5 bg-primary origin-center"
+        className="absolute left-0 w-full h-0.5 bg-current origin-center"
         animate={{
           top: isOpen ? '50%' : '0%',
           rotate: isOpen ? 45 : 0,
@@ -26,7 +26,7 @@ export function HamburgerButton({ isOpen, onClick, className = '' }: HamburgerBu
         transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
       />
       <motion.span
-        className="absolute left-0 top-1/2 w-full h-0.5 bg-primary -translate-y-1/2 origin-center"
+        className="absolute left-0 top-1/2 w-full h-0.5 bg-current -translate-y-1/2 origin-center"
         animate={{
           opacity: isOpen ? 0 : 1,
           scaleX: isOpen ? 0 : 1
@@ -34,7 +34,7 @@ export function HamburgerButton({ isOpen, onClick, className = '' }: HamburgerBu
         transition={{ duration: 0.2 }}
       />
       <motion.span
-        className="absolute left-0 w-full h-0.5 bg-primary origin-center"
+        className="absolute left-0 w-full h-0.5 bg-current origin-center"
         animate={{
           bottom: isOpen ? '50%' : '0%',
           rotate: isOpen ? -45 : 0,

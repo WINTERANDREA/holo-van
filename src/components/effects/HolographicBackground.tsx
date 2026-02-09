@@ -7,16 +7,16 @@ export function HolographicBackground() {
     <div className="fixed inset-0 -z-10 overflow-hidden">
       {/* Dark mode base layer */}
       <div className="absolute inset-0 bg-surface" />
-      {/* Base gradient layer — uses bg tier for dark mode reduction */}
+      {/* Base gradient layer — stays vibrant in both light & dark mode */}
       <motion.div
-        className="absolute inset-0 holographic-base holo-bg-tier"
+        className="absolute inset-0 holographic-base holo-force-vibrant"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       />
       {/* Secondary shifted layer for depth */}
       <motion.div
-        className="absolute inset-0 holographic-overlay holo-bg-tier opacity-60"
+        className="absolute inset-0 holographic-overlay holo-force-vibrant opacity-60"
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.6 }}
         transition={{ duration: 1.5, delay: 0.3 }}

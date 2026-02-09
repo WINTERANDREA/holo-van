@@ -14,7 +14,12 @@ import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { useScrollState } from '@/hooks/useScrollState';
 import { cn } from '@/lib/utils';
 
-export function Header() {
+interface HeaderProps {
+  /** Set to "holographic" on pages with holographic bg (homepage) to force dark text at top */
+  heroStyle?: 'holographic';
+}
+
+export function Header({ heroStyle }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const t = useTranslations('nav');
   const { resolvedTheme } = useTheme();
@@ -25,9 +30,18 @@ export function Header() {
     setMounted(true);
   }, []);
 
-  const logoSrc = mounted && resolvedTheme === 'dark'
-    ? '/images/logo-horizontal-negative.png'
-    : '/images/logo-horizontal-positive.png';
+  const isDark = mounted && resolvedTheme === 'dark';
+
+  // Single flag: true when glassmorphism bg is visible
+  const hasScrolledBg = isScrolled && !isAtTop;
+
+  // On holographic bg at top → force dark text/logo (pastel bg is always light)
+  // On normal pages at top → theme-aware (dark text in light mode, light text in dark mode)
+  const forceDarkAtTop = heroStyle === 'holographic' && !hasScrolledBg;
+
+  const logoSrc = forceDarkAtTop || !isDark
+    ? '/images/logo-horizontal-positive.png'
+    : '/images/logo-horizontal-negative.png';
 
   const shouldHide = direction === 'down' && isScrolled && !isMobileMenuOpen;
 
@@ -35,7 +49,7 @@ export function Header() {
     <>
       <motion.header
         className={cn(
-          'fixed top-0 left-0 right-0 z-40 px-6 py-4 transition-colors duration-300',
+          'fixed top-0 left-0 right-0 z-40 px-6 py-4 transition-all duration-300',
           isAtTop && 'bg-transparent',
           isScrolled && !isAtTop && 'bg-surface/80 backdrop-blur-md border-b border-border',
         )}
@@ -46,7 +60,10 @@ export function Header() {
         }}
         transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] as const }}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className={cn(
+          'max-w-7xl mx-auto flex items-center justify-between transition-colors duration-300',
+          forceDarkAtTop ? 'text-holo-charcoal' : 'text-primary',
+        )}>
           {/* Left nav links (desktop) */}
           <nav className="hidden md:flex items-center gap-8">
             <MagneticLink href="/camper">{t('vans')}</MagneticLink>
@@ -73,7 +90,7 @@ export function Header() {
             <MagneticLink href="/itinerari">{t('routes')}</MagneticLink>
             <MagneticLink href="/contatti">{t('contact')}</MagneticLink>
             <ThemeToggle />
-            <LanguageSwitcher />
+            <LanguageSwitcher variant={forceDarkAtTop ? 'dark' : 'auto'} />
           </div>
 
           {/* Mobile: theme toggle + hamburger */}

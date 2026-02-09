@@ -4,7 +4,7 @@ import { useTheme } from 'next-themes';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
-export function ThemeToggle() {
+export function ThemeToggle({ className = '' }: { className?: string }) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -21,7 +21,7 @@ export function ThemeToggle() {
   return (
     <motion.button
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className="relative w-8 h-8 flex items-center justify-center text-primary cursor-pointer"
+      className={`relative w-8 h-8 flex items-center justify-center text-current cursor-pointer ${className}`}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}

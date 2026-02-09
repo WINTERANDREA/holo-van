@@ -4,7 +4,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
+import { useTheme } from 'next-themes';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -39,6 +41,12 @@ const linkVariants = {
 
 export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const t = useTranslations('nav');
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => { setMounted(true); }, []);
+
+  const isDark = mounted && resolvedTheme === 'dark';
 
   const links = [
     { key: 'vans' as const, href: '/camper' },
@@ -88,7 +96,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             transition={{ delay: 0.5, duration: 0.5 }}
           >
             <Image
-              src="/images/chameleon-color.png"
+              src={isDark ? '/images/chameleon-color.png' : '/design-system/logos/pictogram/HV_Pictogram_POSITIVE.png'}
               alt=""
               fill
               className="object-contain"

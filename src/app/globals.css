@@ -347,6 +347,20 @@ body {
   scroll-behavior: smooth;
 }
 
+/* ===== CAROUSEL ===== */
+.carousel-track {
+  touch-action: pan-y;
+}
+
+/* ===== STICKER SHADOW ===== */
+.sticker-shadow {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+.dark .sticker-shadow {
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   *,
