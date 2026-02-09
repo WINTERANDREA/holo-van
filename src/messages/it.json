@@ -20,7 +20,7 @@
     "pickup": "PARTENZA IL",
     "return": "RIENTRO IL",
     "search": "PRENOTA",
-    "locationPlaceholder": "Roma, Milano, Napoli..."
+    "locationPlaceholder": "Milano"
   },
   "vans": {
     "sectionTitle": "I NOSTRI CAMPER",

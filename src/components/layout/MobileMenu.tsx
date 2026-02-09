@@ -96,7 +96,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             transition={{ delay: 0.5, duration: 0.5 }}
           >
             <Image
-              src={isDark ? '/images/chameleon-color.png' : '/design-system/logos/pictogram/HV_Pictogram_POSITIVE.png'}
+              src={isDark ? '/design-system/logos/extended/HV_Extended_COLOR.png' : '/design-system/logos/extended/HV_Extended_COLOR_Inv.png'}
               alt=""
               fill
               className="object-contain"

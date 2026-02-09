@@ -53,7 +53,7 @@ export function BookingSearch({
       <Input
         name="location"
         label={location}
-        placeholder="Roma, Milano, Napoli..."
+        placeholder="Milano"
         className={isInline ? 'md:flex-1' : ''}
       />
       <Input

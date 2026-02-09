@@ -40,8 +40,8 @@ export function Header({ heroStyle }: HeaderProps) {
   const forceDarkAtTop = heroStyle === 'holographic' && !hasScrolledBg;
 
   const logoSrc = forceDarkAtTop || !isDark
-    ? '/images/logo-horizontal-positive.png'
-    : '/images/logo-horizontal-negative.png';
+    ? '/design-system/logos/extended/HV_Extended_COLOR_Inv.png'
+    : '/design-system/logos/extended/HV_Extended_NEGATIVE.png'
 
   const shouldHide = direction === 'down' && isScrolled && !isMobileMenuOpen;
 
@@ -86,7 +86,7 @@ export function Header({ heroStyle }: HeaderProps) {
               alt="HOLO VAN"
               width={120}
               height={40}
-              className="h-10 w-auto hover:scale-105 active:scale-[0.98] transition-transform"
+              className="h-20 w-auto hover:scale-105 active:scale-[0.98] transition-transform"
               priority
             />
           </Link>
