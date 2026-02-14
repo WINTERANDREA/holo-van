@@ -1,31 +1,53 @@
 import { formatPrice } from '@/lib/utils';
 import type { VanData } from '@/components/ui/VanCard';
+import fleetData from '@/data/fleet.json';
 
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
 
-export type VanType = 'camper-van' | 'motorhome' | 'mini-camper' | 'large-van';
-
 export interface VanSpecs {
   sleeps: number;
   seats: number;
-  engine: string;
+  engine?: string;
   transmission: 'manual' | 'automatic';
-  length: string;
-  year: number;
+  year?: number;
+  manufacturer: string;
+  model: string;
 }
 
 export interface VanDataFull {
   slug: string;
   name: string;
-  type: VanType;
+  manufacturer: string;
+  model: string;
   capacity: number;
-  pricePerDay: number;
+  pricePerDay: number | null;
   features: string[];       // i18n keys — looked up via vanFeatures namespace
   highlights: string[];     // Top 3 selling points (i18n keys)
+  sleepingConfig: string[]; // i18n keys — looked up via sleepingConfig namespace
+  facilities: Record<string, string | boolean>;
   specs: VanSpecs;
   images: string[];         // Empty for now — Skeleton shown
+}
+
+export interface FleetShared {
+  host: { name: string; location: string; languages: string[] };
+  pickup: { city: string; country: string; exactLocationOnConfirmation: boolean };
+  insurance: { vehicleInsured: boolean };
+  cancellationPolicy: {
+    type: string;
+    rules: { condition: string; refund: string }[];
+  };
+  includedExtras: string[];
+  optionalExtras: string[];
+  shuttleAirports: string[];
+  rules: {
+    minimumDriverAge: number;
+    festivalFriendly: boolean;
+    petsAllowed: boolean;
+    smokingAllowed: boolean;
+  };
 }
 
 // ---------------------------------------------------------------------------
@@ -40,99 +62,33 @@ export const localeToIntl: Record<string, string> = {
 };
 
 // ---------------------------------------------------------------------------
-// Mock data — 8 vans (2 per type)
+// Data — transform fleet.json into VanDataFull[]
 // ---------------------------------------------------------------------------
 
-const vans: VanDataFull[] = [
-  {
-    slug: 'california-ocean',
-    name: 'California Ocean',
-    type: 'camper-van',
-    capacity: 4,
-    pricePerDay: 120,
-    features: ['popup-roof', 'kitchen', 'outdoor-shower'],
-    highlights: ['popup-roof', 'kitchen', 'outdoor-shower'],
-    specs: { sleeps: 4, seats: 4, engine: 'Diesel 2.0 TDI', transmission: 'manual', length: '4.9m', year: 2023 },
-    images: [],
+const vans: VanDataFull[] = fleetData.vans.map((v) => ({
+  slug: v.slug,
+  name: v.name,
+  manufacturer: v.manufacturer,
+  model: v.model,
+  capacity: v.seats,
+  pricePerDay: v.priceFrom,
+  features: v.features,
+  highlights: v.highlights,
+  sleepingConfig: v.sleepingConfig,
+  facilities: v.facilities as unknown as Record<string, string | boolean>,
+  specs: {
+    sleeps: v.sleeps,
+    seats: v.seats,
+    engine: v.engine ?? undefined,
+    transmission: v.transmission as 'manual' | 'automatic',
+    year: v.year ?? undefined,
+    manufacturer: v.manufacturer,
+    model: v.model,
   },
-  {
-    slug: 'grand-california',
-    name: 'Grand California',
-    type: 'motorhome',
-    capacity: 4,
-    pricePerDay: 150,
-    features: ['indoor-bathroom', 'double-bed', 'full-kitchen'],
-    highlights: ['indoor-bathroom', 'double-bed', 'full-kitchen'],
-    specs: { sleeps: 4, seats: 4, engine: 'Diesel 2.0 TDI', transmission: 'automatic', length: '5.9m', year: 2024 },
-    images: [],
-  },
-  {
-    slug: 'caddy-california',
-    name: 'Caddy California',
-    type: 'mini-camper',
-    capacity: 2,
-    pricePerDay: 80,
-    features: ['compact', 'popup-roof', 'pull-out-kitchen'],
-    highlights: ['compact', 'popup-roof', 'pull-out-kitchen'],
-    specs: { sleeps: 2, seats: 4, engine: 'Diesel 2.0 TDI', transmission: 'manual', length: '4.5m', year: 2023 },
-    images: [],
-  },
-  {
-    slug: 'crafter-camper',
-    name: 'Crafter Camper',
-    type: 'large-van',
-    capacity: 6,
-    pricePerDay: 180,
-    features: ['spacious', 'indoor-bathroom', 'solar-panels'],
-    highlights: ['spacious', 'indoor-bathroom', 'solar-panels'],
-    specs: { sleeps: 6, seats: 6, engine: 'Diesel 2.0 TDI', transmission: 'automatic', length: '7.0m', year: 2024 },
-    images: [],
-  },
-  {
-    slug: 'multivan-style',
-    name: 'Multivan Style',
-    type: 'camper-van',
-    capacity: 4,
-    pricePerDay: 130,
-    features: ['modern-design', 'popup-roof', 'wifi'],
-    highlights: ['modern-design', 'popup-roof', 'wifi'],
-    specs: { sleeps: 4, seats: 5, engine: 'Diesel 2.0 TDI', transmission: 'automatic', length: '4.9m', year: 2024 },
-    images: [],
-  },
-  {
-    slug: 'california-beach',
-    name: 'California Beach',
-    type: 'camper-van',
-    capacity: 4,
-    pricePerDay: 110,
-    features: ['popup-roof', 'compact', 'easy-to-drive'],
-    highlights: ['popup-roof', 'compact', 'easy-to-drive'],
-    specs: { sleeps: 4, seats: 4, engine: 'Diesel 2.0 TDI', transmission: 'manual', length: '4.9m', year: 2022 },
-    images: [],
-  },
-  {
-    slug: 'sprinter-explorer',
-    name: 'Sprinter Explorer',
-    type: 'large-van',
-    capacity: 4,
-    pricePerDay: 170,
-    features: ['solar-panels', 'full-kitchen', 'air-conditioning'],
-    highlights: ['solar-panels', 'full-kitchen', 'air-conditioning'],
-    specs: { sleeps: 4, seats: 4, engine: 'Diesel 2.2 CDI', transmission: 'automatic', length: '6.4m', year: 2024 },
-    images: [],
-  },
-  {
-    slug: 'mini-countryman-camp',
-    name: 'Mini Countryman Camp',
-    type: 'mini-camper',
-    capacity: 2,
-    pricePerDay: 75,
-    features: ['compact', 'easy-to-drive', 'awning'],
-    highlights: ['compact', 'easy-to-drive', 'awning'],
-    specs: { sleeps: 2, seats: 4, engine: 'Diesel 1.5', transmission: 'manual', length: '4.3m', year: 2023 },
-    images: [],
-  },
-];
+  images: v.images,
+}));
+
+export const shared: FleetShared = fleetData.shared as FleetShared;
 
 // ---------------------------------------------------------------------------
 // Query helpers
@@ -147,20 +103,7 @@ export function getVanBySlug(slug: string): VanDataFull | undefined {
 }
 
 export function getRelatedVans(slug: string, limit = 3): VanDataFull[] {
-  const current = getVanBySlug(slug);
-  if (!current) return vans.slice(0, limit);
-  return vans
-    .filter((v) => v.slug !== slug && v.type === current.type)
-    .concat(vans.filter((v) => v.slug !== slug && v.type !== current.type))
-    .slice(0, limit);
-}
-
-export function getVanTypes(): VanType[] {
-  return [...new Set(vans.map((v) => v.type))];
-}
-
-export function getCapacityOptions(): number[] {
-  return [...new Set(vans.map((v) => v.capacity))].sort((a, b) => a - b);
+  return vans.filter((v) => v.slug !== slug).slice(0, limit);
 }
 
 // ---------------------------------------------------------------------------
@@ -182,9 +125,12 @@ export function toVanCardData(
   return {
     slug: van.slug,
     name: van.name,
-    type: tVans(`vanTypes.${van.type}`),
+    type: `${van.manufacturer} ${van.model}`,
     capacity: `${van.capacity} ${tVans('capacity')}`,
-    pricePerDay: `${formatPrice(van.pricePerDay, intlLocale)}${tVans('perDay')}`,
-    features: van.features.map((f) => tFeatures(f)),
+    pricePerDay: van.pricePerDay != null
+      ? `${formatPrice(van.pricePerDay, intlLocale)}${tVans('perDay')}`
+      : tVans('priceComingSoon'),
+    features: van.highlights.map((f) => tFeatures(f)),
+    image: van.images[0],
   };
 }

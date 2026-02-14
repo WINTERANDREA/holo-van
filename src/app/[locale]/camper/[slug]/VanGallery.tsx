@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { CarouselDots } from '@/components/ui/CarouselDots';
@@ -13,8 +14,6 @@ interface VanGalleryProps {
   vanName: string;
   photosComingSoon: string;
 }
-
-const PLACEHOLDER_COUNT = 4;
 
 function GalleryPlaceholder({ vanName, label }: { vanName: string; label: string }) {
   return (
@@ -34,7 +33,7 @@ function GalleryPlaceholder({ vanName, label }: { vanName: string; label: string
 
 export function VanGallery({ images, vanName, photosComingSoon }: VanGalleryProps) {
   const hasImages = images.length > 0;
-  const slideCount = hasImages ? images.length : PLACEHOLDER_COUNT;
+  const slideCount = hasImages ? images.length : 4;
   const [activeIndex, setActiveIndex] = useState(0);
   const { matches: isMobile } = useMediaQuery('(max-width: 767px)');
   const { matches: prefersReducedMotion } = useMediaQuery('(prefers-reduced-motion: reduce)');
@@ -49,7 +48,20 @@ export function VanGallery({ images, vanName, photosComingSoon }: VanGalleryProp
             <div className="flex overflow-x-auto snap-x snap-mandatory w-full h-full">
               {Array.from({ length: slideCount }, (_, i) => (
                 <div key={i} className="snap-center flex-shrink-0 w-full h-full">
-                  <GalleryPlaceholder vanName={vanName} label={photosComingSoon} />
+                  {hasImages ? (
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={images[i]}
+                        alt={`${vanName} ${i + 1}`}
+                        fill
+                        sizes="100vw"
+                        className="object-cover"
+                        priority={i === 0}
+                      />
+                    </div>
+                  ) : (
+                    <GalleryPlaceholder vanName={vanName} label={photosComingSoon} />
+                  )}
                 </div>
               ))}
             </div>
@@ -70,7 +82,20 @@ export function VanGallery({ images, vanName, photosComingSoon }: VanGalleryProp
                     className="flex-shrink-0 h-full"
                     style={{ width: carousel.cardWidth || '100%' }}
                   >
-                    <GalleryPlaceholder vanName={vanName} label={photosComingSoon} />
+                    {hasImages ? (
+                      <div className="relative w-full h-full">
+                        <Image
+                          src={images[i]}
+                          alt={`${vanName} ${i + 1}`}
+                          fill
+                          sizes="100vw"
+                          className="object-cover"
+                          priority={i === 0}
+                        />
+                      </div>
+                    ) : (
+                      <GalleryPlaceholder vanName={vanName} label={photosComingSoon} />
+                    )}
                   </div>
                 ))}
               </motion.div>
@@ -90,7 +115,7 @@ export function VanGallery({ images, vanName, photosComingSoon }: VanGalleryProp
   return (
     <div className="space-y-3">
       {/* Main image */}
-      <div className="aspect-[4/3] rounded-xl overflow-hidden relative">
+      <div className="aspect-[4/3] rounded-xl overflow-hidden relative bg-primary/5">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeIndex}
@@ -100,7 +125,20 @@ export function VanGallery({ images, vanName, photosComingSoon }: VanGalleryProp
             transition={{ duration: 0.2 }}
             className="w-full h-full"
           >
-            <GalleryPlaceholder vanName={vanName} label={photosComingSoon} />
+            {hasImages ? (
+              <div className="relative w-full h-full">
+                <Image
+                  src={images[activeIndex]}
+                  alt={`${vanName} ${activeIndex + 1}`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                  priority={activeIndex === 0}
+                />
+              </div>
+            ) : (
+              <GalleryPlaceholder vanName={vanName} label={photosComingSoon} />
+            )}
           </motion.div>
         </AnimatePresence>
       </div>
@@ -119,7 +157,17 @@ export function VanGallery({ images, vanName, photosComingSoon }: VanGalleryProp
                 : 'opacity-60 hover:opacity-100',
             )}
           >
-            <GalleryPlaceholder vanName={vanName} label="" />
+            {hasImages ? (
+              <Image
+                src={images[i]}
+                alt={`${vanName} thumbnail ${i + 1}`}
+                fill
+                sizes="(max-width: 768px) 25vw, 12vw"
+                className="object-cover"
+              />
+            ) : (
+              <GalleryPlaceholder vanName={vanName} label="" />
+            )}
           </button>
         ))}
       </div>

@@ -30,12 +30,7 @@
     "info": "Info",
     "capacity": "seats",
     "perDay": "/day",
-    "vanTypes": {
-      "camper-van": "CAMPER VAN",
-      "motorhome": "MOTORHOME",
-      "mini-camper": "MINI CAMPER",
-      "large-van": "LARGE VAN"
-    }
+    "priceComingSoon": "Price coming soon"
   },
   "footer": {
     "newsletter": {
@@ -153,18 +148,8 @@
       "subtitle": "Every van is a promise of freedom. Choose yours.",
       "viewDetails": "DISCOVER",
       "backToCatalog": "BACK TO VANS",
-      "filters": {
-        "allTypes": "ALL TYPES",
-        "allCapacities": "ALL",
-        "sortLabel": "SORT",
-        "sortDefault": "RECOMMENDED",
-        "sortPriceLow": "PRICE: LOW → HIGH",
-        "sortPriceHigh": "PRICE: HIGH → LOW",
-        "noResults": "NO VANS MATCH YOUR FILTERS",
-        "noResultsHint": "Try adjusting the filters for more options.",
-        "clearFilters": "CLEAR FILTERS",
-        "capacityLabel": "{count} SEATS"
-      }
+      "comingSoon": "MORE VANS COMING SOON",
+      "comingSoonText": "We're expanding the fleet. New vans arriving soon."
     },
     "vanDetail": {
       "comingSoon": "Details coming soon",
@@ -179,8 +164,9 @@
         "seats": "SEATS",
         "engine": "ENGINE",
         "transmission": "TRANSMISSION",
-        "length": "LENGTH",
-        "year": "YEAR"
+        "year": "YEAR",
+        "manufacturer": "MAKE",
+        "model": "MODEL"
       },
       "transmissions": {
         "manual": "Manual",
@@ -189,8 +175,16 @@
       "relatedTitle": "YOU MIGHT ALSO LIKE",
       "priceFrom": "from",
       "perDay": "/day",
+      "priceComingSoon": "Price coming soon",
       "stickyBook": "BOOK NOW",
-      "photosComingSoon": "Photos coming soon"
+      "photosComingSoon": "Photos coming soon",
+      "sleepingTitle": "SLEEPING CONFIGURATION",
+      "includedTitle": "WHAT'S INCLUDED",
+      "optionalExtrasTitle": "OPTIONAL EXTRAS",
+      "rulesTitle": "RULES",
+      "cancellationTitle": "CANCELLATION",
+      "pickupTitle": "PICK-UP LOCATION",
+      "pickupNote": "Exact address provided upon booking confirmation."
     },
     "itineraries": {
       "title": "ROUTES",
@@ -216,46 +210,73 @@
     }
   },
   "vanFeatures": {
-    "popup-roof": "Pop-up roof",
-    "kitchen": "Built-in kitchen",
+    "kitchen-with-sink": "Kitchen with sink",
+    "gas-stove": "Built-in gas stove",
+    "fridge": "Refrigerator",
+    "kitchen-kit": "Kitchen kit",
+    "indoor-dining-table": "Indoor dining table",
+    "portable-toilet": "Portable toilet (PortaPotti)",
     "outdoor-shower": "Outdoor shower",
-    "indoor-bathroom": "Indoor bathroom",
-    "double-bed": "Double bed",
-    "full-kitchen": "Full kitchen",
-    "compact": "Compact",
-    "pull-out-kitchen": "Pull-out kitchen",
+    "indoor-hot-shower": "Indoor hot shower",
+    "wc-with-shower": "WC with shower",
+    "tow-hook": "Tow hook",
+    "safety-kit": "Safety triangle & reflective vest",
+    "camping-cable": "Camping cable",
+    "awning": "Awning",
+    "water-hose": "Water hose",
     "solar-panels": "Solar panels",
-    "spacious": "Spacious",
-    "modern-design": "Modern design",
-    "wifi": "WiFi",
-    "easy-to-drive": "Easy to drive",
+    "autonomous-heating": "Autonomous heating",
     "air-conditioning": "Air conditioning",
-    "awning": "Awning"
+    "bike-rack": "Bike rack",
+    "bed-linen": "Bed linen",
+    "water-tanks": "Water tanks",
+    "rear-storage": "Rear storage",
+    "camping-roof": "Camping roof",
+    "radio-aux-usb": "Radio with AUX & USB",
+    "cleaning-kit": "Cleaning kit",
+    "assistance-24-7": "24/7 assistance",
+    "backup-camera": "Backup camera",
+    "leveling-wedges": "Leveling wedges"
+  },
+  "sleepingConfig": {
+    "lower-double-bed": "Lower double bed",
+    "popup-double-bed": "Double bed in pop-up roof tent",
+    "dinette-double-bed": "Dinette convertible to double bed",
+    "optional-cabin-bed": "Third bed in cabin (on request)"
+  },
+  "vanExtras": {
+    "insurance": "Vehicle insurance",
+    "kitchen-kit": "Complete kitchen kit",
+    "bed-linen": "Bed linen",
+    "cleaning-kit": "Cleaning kit",
+    "assistance-24-7": "24/7 roadside assistance",
+    "shuttle-service": "Airport shuttle service",
+    "shuttle-service-description": "Pick-up and drop-off at Milano Malpensa, Orio al Serio (Bergamo) and Milano Linate airports",
+    "additional-insurance": "Additional insurance",
+    "additional-insurance-description": "Better deductibles and coverage limits"
+  },
+  "vanRules": {
+    "minimumAge": "Minimum driver age: {age}",
+    "petsAllowed": "Pets allowed",
+    "petsNotAllowed": "No pets",
+    "smokingAllowed": "Smoking allowed",
+    "smokingNotAllowed": "No smoking",
+    "festivalFriendly": "Festival friendly",
+    "festivalNotAllowed": "Not allowed at festivals"
+  },
+  "cancellation": {
+    "strict": "Strict",
+    "30-plus-days": "30 or more days before pick-up",
+    "within-30-days": "Within 30 days of pick-up",
+    "50-percent-minus-fee": "50% refund (excluding service fee)",
+    "no-refund": "No refund"
   },
   "vanData": {
-    "california-ocean": {
-      "description": "The California Ocean is the perfect balance of freedom and comfort. Pop-up roof for starry nights, built-in kitchen for lunches with a sea view, and an outdoor shower to wash off the sand after a day at the beach."
+    "vaiana": {
+      "description": "Meet Vaiana — our Volkswagen T4 TDI. Compact, nimble, and incredibly easy to drive — as zippy as a car, perfect even if you're new to the van world. No experience needed: Vaiana takes you everywhere with lightness and simplicity. Inside you'll find everything you need for life on four wheels: a functional kitchen with two burners, sink and fridge, a comfy double bed on the lower level, and a second large double bed in the pop-up roof tent — where you fall asleep watching the stars. Approved for four travellers to ride and sleep, making it ideal for couples, friends or small families. Rounding it out: a portable chemical toilet (PortaPotti), an outdoor shower to refresh surrounded by nature, a bike rack for those who love exploring on two wheels, and electrical outlets to charge phones, laptops and devices even when completely off-grid. Vaiana isn't just a van — it's a lifestyle: essential, authentic, wild. Built for those who want to slow down, break the routine and breathe freedom with every fibre. If you feel the call of adventure and want to spend your days outdoors, on back roads, with breakfasts with a view and sunsets that warm the soul… Vaiana is waiting for you."
     },
-    "grand-california": {
-      "description": "The Grand California is your home on wheels. Indoor bathroom, fixed double bed and full kitchen. For those who want to travel without compromise, but with the right spirit."
-    },
-    "caddy-california": {
-      "description": "Small, nimble, perfect for two. The Caddy California parks anywhere, squeezes through narrow village streets and takes you where the big ones can't. Minimalism that is freedom."
-    },
-    "crafter-camper": {
-      "description": "The Crafter is for serious adventures. Space for everything and everyone, solar panels for total autonomy and a bathroom that makes all the difference after days on the road."
-    },
-    "multivan-style": {
-      "description": "Contemporary design, onboard technology and the comfort of a pop-up roof. The Multivan Style is for those who want to travel in style without losing the spirit of adventure."
-    },
-    "california-beach": {
-      "description": "Essential and straightforward, the California Beach is the van for those who know the journey is in the road, not the amenities. Easy to drive, compact and ready for any adventure."
-    },
-    "sprinter-explorer": {
-      "description": "The Sprinter Explorer is built for long distances. Solar panels, full kitchen and air conditioning to handle any climate. The ideal companion for crossing Italy from north to south."
-    },
-    "mini-countryman-camp": {
-      "description": "The smallest in the fleet, but with a big heart. The Mini Countryman Camp is for those who love driving, winding roads and the simplicity of a rooftop tent under the stars."
+    "tarifa": {
+      "description": "Meet Tarifa — a compact yet spacious Fiat Ducato that's easy to drive and equipped with everything you need to feel free… but also at home. Tarifa is the perfect choice for those seeking comfort and autonomy without giving up the simplicity of life on the road. The backup camera makes every manoeuvre easy, while the driving is smooth and intuitive — even for first-time vanners. Inside you'll find a bright, elegant space that welcomes you warmly. The living area is roomy and functional, with a comfortable table for eating, working or relaxing. The kitchen is equipped with two burners for cooking in freedom, and the bathroom — surprisingly spacious for a van this size — gives you a real hot shower just like home. In the evening, the dinette converts into a large bed sleeping two (or even three), and an optional third bed is available in the cabin on request. Hot water, heating in the living area and air conditioning in the cabin make every season perfect for hitting the road. Tarifa is approved for three travellers but designed for those who love feeling at home everywhere. Whether you want to lose yourself among the Dolomite peaks or wake up by the sea, Tarifa is ready to follow you. For those who dream of a journey made of freedom, nature and sunsets to remember. With Tarifa, every road can become home."
     }
   }
 }

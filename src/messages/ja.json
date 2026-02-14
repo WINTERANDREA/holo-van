@@ -30,12 +30,7 @@
     "info": "情報",
     "capacity": "人乗り",
     "perDay": "/日",
-    "vanTypes": {
-      "camper-van": "キャンパーバン",
-      "motorhome": "モーターホーム",
-      "mini-camper": "ミニキャンパー",
-      "large-van": "大型バン"
-    }
+    "priceComingSoon": "価格準備中"
   },
   "footer": {
     "newsletter": {
@@ -153,18 +148,8 @@
       "subtitle": "すべてのバンは自由の約束。あなたのを選んで。",
       "viewDetails": "詳しく見る",
       "backToCatalog": "一覧に戻る",
-      "filters": {
-        "allTypes": "すべてのタイプ",
-        "allCapacities": "すべて",
-        "sortLabel": "並び替え",
-        "sortDefault": "おすすめ",
-        "sortPriceLow": "価格：安い順",
-        "sortPriceHigh": "価格：高い順",
-        "noResults": "条件に合うキャンパーがありません",
-        "noResultsHint": "フィルターを変更してみてください。",
-        "clearFilters": "フィルターをクリア",
-        "capacityLabel": "{count}人乗り"
-      }
+      "comingSoon": "新しいキャンパー近日公開",
+      "comingSoonText": "フリートを拡大中。新しいキャンパーがまもなく到着します。"
     },
     "vanDetail": {
       "comingSoon": "詳細準備中",
@@ -179,8 +164,9 @@
         "seats": "座席数",
         "engine": "エンジン",
         "transmission": "トランスミッション",
-        "length": "全長",
-        "year": "年式"
+        "year": "年式",
+        "manufacturer": "メーカー",
+        "model": "モデル"
       },
       "transmissions": {
         "manual": "マニュアル",
@@ -189,8 +175,16 @@
       "relatedTitle": "こちらもおすすめ",
       "priceFrom": "から",
       "perDay": "/日",
+      "priceComingSoon": "価格準備中",
       "stickyBook": "今すぐ予約",
-      "photosComingSoon": "写真準備中"
+      "photosComingSoon": "写真準備中",
+      "sleepingTitle": "ベッド構成",
+      "includedTitle": "含まれるもの",
+      "optionalExtrasTitle": "オプションエクストラ",
+      "rulesTitle": "ルール",
+      "cancellationTitle": "キャンセル",
+      "pickupTitle": "受取場所",
+      "pickupNote": "正確な住所は予約確認時にお知らせします。"
     },
     "itineraries": {
       "title": "ルート",
@@ -216,46 +210,73 @@
     }
   },
   "vanFeatures": {
-    "popup-roof": "ポップアップルーフ",
-    "kitchen": "ビルトインキッチン",
+    "kitchen-with-sink": "シンク付きキッチン",
+    "gas-stove": "ビルトインガスコンロ",
+    "fridge": "冷蔵庫",
+    "kitchen-kit": "キッチンキット",
+    "indoor-dining-table": "室内ダイニングテーブル",
+    "portable-toilet": "ポータブルトイレ（PortaPotti）",
     "outdoor-shower": "アウトドアシャワー",
-    "indoor-bathroom": "室内バスルーム",
-    "double-bed": "ダブルベッド",
-    "full-kitchen": "フルキッチン",
-    "compact": "コンパクト",
-    "pull-out-kitchen": "引き出しキッチン",
+    "indoor-hot-shower": "室内温水シャワー",
+    "wc-with-shower": "シャワー付きトイレ",
+    "tow-hook": "トウフック",
+    "safety-kit": "三角表示板＆反射ベスト",
+    "camping-cable": "キャンピングケーブル",
+    "awning": "オーニング",
+    "water-hose": "給水ホース",
     "solar-panels": "ソーラーパネル",
-    "spacious": "広々",
-    "modern-design": "モダンデザイン",
-    "wifi": "WiFi",
-    "easy-to-drive": "運転しやすい",
+    "autonomous-heating": "自律式暖房",
     "air-conditioning": "エアコン",
-    "awning": "オーニング"
+    "bike-rack": "バイクラック",
+    "bed-linen": "寝具",
+    "water-tanks": "給水タンク",
+    "rear-storage": "リアストレージ",
+    "camping-roof": "キャンピングルーフ",
+    "radio-aux-usb": "AUX＆USB付きラジオ",
+    "cleaning-kit": "クリーニングキット",
+    "assistance-24-7": "24時間サポート",
+    "backup-camera": "バックカメラ",
+    "leveling-wedges": "レベリングウェッジ"
+  },
+  "sleepingConfig": {
+    "lower-double-bed": "下段ダブルベッド",
+    "popup-double-bed": "ポップアップルーフテントのダブルベッド",
+    "dinette-double-bed": "ダイネット変換式ダブルベッド",
+    "optional-cabin-bed": "キャビン内サードベッド（リクエスト制）"
+  },
+  "vanExtras": {
+    "insurance": "車両保険",
+    "kitchen-kit": "キッチンキット一式",
+    "bed-linen": "寝具",
+    "cleaning-kit": "クリーニングキット",
+    "assistance-24-7": "24時間ロードサービス",
+    "shuttle-service": "空港シャトルサービス",
+    "shuttle-service-description": "ミラノ・マルペンサ、オーリオ・アル・セーリオ（ベルガモ）、ミラノ・リナーテ各空港への送迎",
+    "additional-insurance": "追加保険",
+    "additional-insurance-description": "より有利な免責額と補償限度額"
+  },
+  "vanRules": {
+    "minimumAge": "最低運転年齢：{age}歳",
+    "petsAllowed": "ペット可",
+    "petsNotAllowed": "ペット不可",
+    "smokingAllowed": "喫煙可",
+    "smokingNotAllowed": "禁煙",
+    "festivalFriendly": "フェスティバル対応",
+    "festivalNotAllowed": "フェスティバル不可"
+  },
+  "cancellation": {
+    "strict": "厳格",
+    "30-plus-days": "受取日の30日以上前",
+    "within-30-days": "受取日の30日以内",
+    "50-percent-minus-fee": "50%返金（サービス料除く）",
+    "no-refund": "返金なし"
   },
   "vanData": {
-    "california-ocean": {
-      "description": "California Oceanは自由と快適さの完璧なバランス。星空の下のポップアップルーフ、海を眺めながらのビルトインキッチン、ビーチの後に砂を流すアウトドアシャワー。"
+    "vaiana": {
+      "description": "Vaianaをご紹介 — Volkswagen T4 TDI。コンパクトで機敏、驚くほど運転しやすい — 乗用車のように軽快で、バン初心者にもぴったり。経験は不要です。Vaianaは軽やかにどこへでも連れて行ってくれます。車内には四輪の自由な旅に必要なすべてが揃っています：2口コンロ、シンク、冷蔵庫付きのキッチン、下段の快適なダブルベッド、そしてポップアップルーフテントにもう一つの大きなダブルベッド — 星を眺めながら眠りにつけます。4人乗り・4人就寝が認定されており、カップル、友人、小家族に最適です。ポータブルトイレ（PortaPotti）、自然の中でリフレッシュできるアウトドアシャワー、二輪でも探検を楽しめるバイクラック、オフグリッドでもデバイスを充電できる電源コンセントも完備。Vaianaは単なるバンではなく、ライフスタイル：本質的で、本物で、ワイルド。日常を離れ、自由を全身で感じたい人のために。冒険の呼び声を感じるなら…Vaianaが待っています。"
     },
-    "grand-california": {
-      "description": "Grand Californiaは走る我が家。室内バスルーム、固定ダブルベッド、フルキッチン。妥協なく旅したい、でも正しいスピリットを持つ人のために。"
-    },
-    "caddy-california": {
-      "description": "小さく、機敏で、二人にぴったり。Caddy Californiaはどこでも駐車でき、村の細い路地を抜け、大きなバンでは行けない場所へ連れて行く。ミニマリズムこそ自由。"
-    },
-    "crafter-camper": {
-      "description": "Crafterは本格的な冒険のために。すべてのための空間、完全な自律のためのソーラーパネル、道の日々の後に違いを生むバスルーム。"
-    },
-    "multivan-style": {
-      "description": "コンテンポラリーデザイン、車載テクノロジー、ポップアップルーフの快適さ。Multivan Styleは冒険心を失わずスタイリッシュに旅したい人のために。"
-    },
-    "california-beach": {
-      "description": "エッセンシャルでストレート。California Beachは旅が道にあると知っている人のためのバン。運転しやすく、コンパクトで、どんな冒険にも準備万端。"
-    },
-    "sprinter-explorer": {
-      "description": "Sprinter Explorerは長距離のために作られた。ソーラーパネル、フルキッチン、どんな気候にも対応するエアコン。イタリアを北から南まで横断する理想の相棒。"
-    },
-    "mini-countryman-camp": {
-      "description": "フリート最小だが、大きな心を持つ。Mini Countryman Campはドライブ好き、曲がりくねった道、星空の下のルーフテントのシンプルさを愛する人のために。"
+    "tarifa": {
+      "description": "Tarifaをご紹介 — コンパクトながら広々としたFiat Ducato。運転しやすく、自由を感じるために必要なすべてを備えています…そして家のような安心感も。Tarifaは、ロードトリップのシンプルさを諦めずにコンフォートと自律性を求める方に最適な選択肢です。バックカメラがあらゆる操作を容易にし、運転は初心者にもスムーズで直感的。車内は明るくエレガントな空間が温かく迎えてくれます。広々としたリビングエリアには食事、仕事、リラックスに使える快適なテーブル。2口コンロ付きキッチンで自由に料理でき、このサイズのバンとは思えないほど広いバスルームでは、自宅のような温かいシャワーを楽しめます。夜はダイネットが大きなベッドに変わり2人（または3人）が快適に眠れ、リクエストでキャビン内にサードベッドも利用可能。温水、居住エリアの暖房、キャビンのエアコンで、どの季節も旅に最適。Tarifaは3人乗り認定。ドロミテの峰々に迷い込むも、海辺で目覚めるも、Tarifaはいつでもあなたと共に。すべての道が家になる旅を。"
     }
   }
 }

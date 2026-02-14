@@ -1,0 +1,166 @@
+{
+  "vans": [
+    {
+      "slug": "vaiana",
+      "name": "Vaiana",
+      "manufacturer": "Volkswagen",
+      "model": "T4 California",
+      "engine": "TDI",
+      "transmission": "manual",
+      "year": null,
+      "seats": 4,
+      "sleeps": 4,
+      "priceFrom": null,
+      "features": [
+        "kitchen-with-sink",
+        "gas-stove",
+        "fridge",
+        "kitchen-kit",
+        "indoor-dining-table",
+        "portable-toilet",
+        "outdoor-shower",
+        "tow-hook",
+        "safety-kit",
+        "camping-cable",
+        "awning",
+        "water-hose",
+        "solar-panels",
+        "autonomous-heating",
+        "bike-rack",
+        "bed-linen",
+        "water-tanks",
+        "rear-storage",
+        "camping-roof",
+        "radio-aux-usb",
+        "cleaning-kit",
+        "assistance-24-7"
+      ],
+      "highlights": ["solar-panels", "outdoor-shower", "camping-roof"],
+      "sleepingConfig": [
+        "lower-double-bed",
+        "popup-double-bed"
+      ],
+      "facilities": {
+        "kitchen": true,
+        "toilet": "portable-toilet",
+        "shower": "outdoor-shower",
+        "water": "water-tanks"
+      },
+      "images": [
+        "/images/van/vaiana/VAIANAKF.jpg",
+        "/images/van/vaiana/VaianaEsterno.jpg",
+        "/images/van/vaiana/VAIANA-2.jpg",
+        "/images/van/vaiana/VAIANAKF-2.jpg",
+        "/images/van/vaiana/PrimaFoto1.jpg",
+        "/images/van/vaiana/FotoInterna1.jpg",
+        "/images/van/vaiana/FotoInterna2.jpg",
+        "/images/van/vaiana/ProveInterniVaiana-7.jpg"
+      ]
+    },
+    {
+      "slug": "tarifa",
+      "name": "Tarifa",
+      "manufacturer": "Fiat",
+      "model": "Ducato 540",
+      "engine": null,
+      "transmission": "manual",
+      "year": null,
+      "seats": 3,
+      "sleeps": 3,
+      "priceFrom": null,
+      "features": [
+        "kitchen-with-sink",
+        "gas-stove",
+        "fridge",
+        "kitchen-kit",
+        "indoor-dining-table",
+        "wc-with-shower",
+        "indoor-hot-shower",
+        "backup-camera",
+        "leveling-wedges",
+        "safety-kit",
+        "camping-cable",
+        "air-conditioning",
+        "water-hose",
+        "autonomous-heating",
+        "bed-linen",
+        "water-tanks",
+        "rear-storage",
+        "radio-aux-usb",
+        "cleaning-kit",
+        "assistance-24-7"
+      ],
+      "highlights": ["indoor-hot-shower", "air-conditioning", "backup-camera"],
+      "sleepingConfig": [
+        "dinette-double-bed",
+        "optional-cabin-bed"
+      ],
+      "facilities": {
+        "kitchen": true,
+        "toilet": "wc-with-shower",
+        "shower": "indoor-hot-shower",
+        "climate": "air-conditioning"
+      },
+      "images": [
+        "/images/van/tarifa/TARIFASY.jpg",
+        "/images/van/tarifa/TARIFA.jpg",
+        "/images/van/tarifa/TARIFA-3.jpg",
+        "/images/van/tarifa/TARIFA-7.jpg",
+        "/images/van/tarifa/TARIFA-14.jpg",
+        "/images/van/tarifa/TARIFAS-6.jpg",
+        "/images/van/tarifa/TARIFAS-8.jpg",
+        "/images/van/tarifa/TARIFASYGI.jpg"
+      ]
+    }
+  ],
+  "shared": {
+    "host": {
+      "name": "Max Hatter",
+      "location": "Premolo, Italy",
+      "languages": ["es", "pt", "en"]
+    },
+    "pickup": {
+      "city": "Cesano Maderno",
+      "country": "Italy",
+      "exactLocationOnConfirmation": true
+    },
+    "insurance": {
+      "vehicleInsured": true
+    },
+    "cancellationPolicy": {
+      "type": "strict",
+      "rules": [
+        {
+          "condition": "30-plus-days",
+          "refund": "50-percent-minus-fee"
+        },
+        {
+          "condition": "within-30-days",
+          "refund": "no-refund"
+        }
+      ]
+    },
+    "includedExtras": [
+      "insurance",
+      "kitchen-kit",
+      "bed-linen",
+      "cleaning-kit",
+      "assistance-24-7"
+    ],
+    "optionalExtras": [
+      "shuttle-service",
+      "additional-insurance"
+    ],
+    "shuttleAirports": [
+      "Milano Malpensa",
+      "Orio al Serio (Bergamo)",
+      "Milano Linate"
+    ],
+    "rules": {
+      "minimumDriverAge": 23,
+      "festivalFriendly": true,
+      "petsAllowed": true,
+      "smokingAllowed": true
+    }
+  }
+}

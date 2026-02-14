@@ -30,12 +30,7 @@
     "info": "Info",
     "capacity": "posti",
     "perDay": "/giorno",
-    "vanTypes": {
-      "camper-van": "CAMPER VAN",
-      "motorhome": "MOTORHOME",
-      "mini-camper": "MINI CAMPER",
-      "large-van": "FURGONE GRANDE"
-    }
+    "priceComingSoon": "Prezzo in arrivo"
   },
   "footer": {
     "newsletter": {
@@ -153,18 +148,8 @@
       "subtitle": "Ogni van è una promessa di libertà. Scegli il tuo.",
       "viewDetails": "SCOPRI",
       "backToCatalog": "TORNA AI CAMPER",
-      "filters": {
-        "allTypes": "TUTTI I TIPI",
-        "allCapacities": "TUTTI",
-        "sortLabel": "ORDINA",
-        "sortDefault": "CONSIGLIATI",
-        "sortPriceLow": "PREZZO: BASSO → ALTO",
-        "sortPriceHigh": "PREZZO: ALTO → BASSO",
-        "noResults": "NESSUN CAMPER CORRISPONDE AI FILTRI",
-        "noResultsHint": "Prova a modificare i filtri per più opzioni.",
-        "clearFilters": "RIMUOVI FILTRI",
-        "capacityLabel": "{count} POSTI"
-      }
+      "comingSoon": "ALTRI VAN IN ARRIVO",
+      "comingSoonText": "Stiamo ampliando la flotta. Nuovi camper arriveranno presto."
     },
     "vanDetail": {
       "comingSoon": "Dettagli in arrivo",
@@ -179,8 +164,9 @@
         "seats": "POSTI",
         "engine": "MOTORE",
         "transmission": "CAMBIO",
-        "length": "LUNGHEZZA",
-        "year": "ANNO"
+        "year": "ANNO",
+        "manufacturer": "MARCA",
+        "model": "MODELLO"
       },
       "transmissions": {
         "manual": "Manuale",
@@ -189,8 +175,16 @@
       "relatedTitle": "POTREBBE PIACERTI ANCHE",
       "priceFrom": "da",
       "perDay": "/giorno",
+      "priceComingSoon": "Prezzo in arrivo",
       "stickyBook": "PRENOTA ORA",
-      "photosComingSoon": "Foto in arrivo"
+      "photosComingSoon": "Foto in arrivo",
+      "sleepingTitle": "CONFIGURAZIONE LETTI",
+      "includedTitle": "COSA È INCLUSO",
+      "optionalExtrasTitle": "EXTRA OPZIONALI",
+      "rulesTitle": "REGOLE",
+      "cancellationTitle": "CANCELLAZIONE",
+      "pickupTitle": "PUNTO DI RITIRO",
+      "pickupNote": "L'indirizzo esatto verrà fornito alla conferma della prenotazione."
     },
     "itineraries": {
       "title": "ITINERARI",
@@ -216,46 +210,73 @@
     }
   },
   "vanFeatures": {
-    "popup-roof": "Tetto pop-up",
-    "kitchen": "Cucina integrata",
-    "outdoor-shower": "Doccia esterna",
-    "indoor-bathroom": "Bagno integrato",
-    "double-bed": "Letto matrimoniale",
-    "full-kitchen": "Cucina full",
-    "compact": "Compatto",
-    "pull-out-kitchen": "Cucina estraibile",
+    "kitchen-with-sink": "Cucina con lavello",
+    "gas-stove": "Fornello a gas integrato",
+    "fridge": "Frigorifero",
+    "kitchen-kit": "Kit di cucina",
+    "indoor-dining-table": "Tavolo da pranzo interno",
+    "portable-toilet": "Toilette portatile (PortaPotti)",
+    "outdoor-shower": "Doccino esterno",
+    "indoor-hot-shower": "Doccia interna (acqua calda)",
+    "wc-with-shower": "WC con doccia",
+    "tow-hook": "Gancio di traino",
+    "safety-kit": "Triangolo e giubbotto catarifrangente",
+    "camping-cable": "Cavo da campeggio",
+    "awning": "Tendalino",
+    "water-hose": "Tubo dell'acqua",
     "solar-panels": "Pannelli solari",
-    "spacious": "Spazioso",
-    "modern-design": "Design moderno",
-    "wifi": "WiFi",
-    "easy-to-drive": "Facile da guidare",
-    "air-conditioning": "Climatizzatore",
-    "awning": "Tenda da sole"
+    "autonomous-heating": "Riscaldamento autonomo",
+    "air-conditioning": "Aria condizionata",
+    "bike-rack": "Portabici",
+    "bed-linen": "Biancheria da letto",
+    "water-tanks": "Serbatoi d'acqua",
+    "rear-storage": "Portaoggetti posteriore",
+    "camping-roof": "Tettuccio da campeggio",
+    "radio-aux-usb": "Radio con porta AUX e USB",
+    "cleaning-kit": "Kit pulizia",
+    "assistance-24-7": "Assistenza 24/7",
+    "backup-camera": "Telecamera posteriore",
+    "leveling-wedges": "Cunei di livellamento"
+  },
+  "sleepingConfig": {
+    "lower-double-bed": "Letto matrimoniale parte inferiore",
+    "popup-double-bed": "Letto matrimoniale in tenda a soffietto pop-up",
+    "dinette-double-bed": "Dinette trasformabile in letto matrimoniale",
+    "optional-cabin-bed": "Terzo letto in cabina (su richiesta)"
+  },
+  "vanExtras": {
+    "insurance": "Assicurazione veicolo",
+    "kitchen-kit": "Kit di cucina completo",
+    "bed-linen": "Biancheria da letto",
+    "cleaning-kit": "Kit pulizia",
+    "assistance-24-7": "Assistenza stradale 24/7",
+    "shuttle-service": "Servizio navetta aeroporto",
+    "shuttle-service-description": "Ritiro e consegna presso gli aeroporti di Milano Malpensa, Orio al Serio (Bergamo) e Milano Linate",
+    "additional-insurance": "Assicurazione aggiuntiva",
+    "additional-insurance-description": "Franchigie e limiti più vantaggiosi"
+  },
+  "vanRules": {
+    "minimumAge": "Età minima conducente: {age} anni",
+    "petsAllowed": "Animali ammessi",
+    "petsNotAllowed": "Animali non ammessi",
+    "smokingAllowed": "Fumatori ammessi",
+    "smokingNotAllowed": "Vietato fumare",
+    "festivalFriendly": "Festival friendly",
+    "festivalNotAllowed": "Non ammesso ai festival"
+  },
+  "cancellation": {
+    "strict": "Rigida",
+    "30-plus-days": "30 o più giorni prima del ritiro",
+    "within-30-days": "Entro 30 giorni dal ritiro",
+    "50-percent-minus-fee": "Rimborso del 50% (esclusa commissione di servizio)",
+    "no-refund": "Nessun rimborso"
   },
   "vanData": {
-    "california-ocean": {
-      "description": "Il California Ocean è il perfetto equilibrio tra libertà e comfort. Tetto pop-up per le notti stellate, cucina integrata per i pranzi vista mare e doccia esterna per togliersi la sabbia dopo una giornata in spiaggia."
+    "vaiana": {
+      "description": "Questo è il nostro VAN e si chiama Vaiana. È un Volkswagen T4 TDI, compatto, maneggevole e super facile da guidare, scattante come una macchina, perfetto anche per chi è alle prime armi con il mondo dei van. Non serve essere esperti: Vaiana ti porta ovunque con leggerezza e semplicità. All'interno troverai tutto il necessario per vivere la libertà del viaggio su quattro ruote: una cucina funzionale con due fuochi, lavello e frigo, un comodo letto matrimoniale nella parte inferiore e un secondo grande letto matrimoniale nella tenda a soffietto pop-up, dove ci si addormenta guardando le stelle. È omologato per viaggiare e dormire in quattro persone, quindi ideale per coppie, amici o piccole famiglie. Completa il tutto un wc chimico portatile (PortaPotti), una doccia esterna per rinfrescarsi immersi nella natura, un porta biciclette per chi ama esplorare anche su due ruote e prese elettriche per ricaricare telefoni, computer e dispositivi elettronici anche quando sei completamente off-grid. Vaiana non è solo un van, è uno stile di vita: essenziale, autentico, selvaggio. È pensato per chi vuole rallentare, uscire dai soliti schemi e respirare la libertà a pieni polmoni. Se anche tu senti il richiamo dell'avventura e vuoi vivere giornate all'aria aperta, tra strade secondarie, colazioni con vista e tramonti che scaldano l'anima... allora Vaiana ti sta aspettando."
     },
-    "grand-california": {
-      "description": "Il Grand California è la tua casa su ruote. Bagno integrato, letto matrimoniale fisso e cucina completa. Per chi vuole viaggiare senza rinunce, ma con lo spirito giusto."
-    },
-    "caddy-california": {
-      "description": "Piccolo, agile, perfetto per due. Il Caddy California si parcheggia ovunque, si infila nelle stradine dei borghi e ti porta dove i grandi non arrivano. Minimalismo che è libertà."
-    },
-    "crafter-camper": {
-      "description": "Il Crafter è per le avventure serie. Spazio per tutto e per tutti, pannelli solari per l'autonomia totale e un bagno che fa la differenza dopo giorni di strada."
-    },
-    "multivan-style": {
-      "description": "Design contemporaneo, tecnologia di bordo e il comfort di un tetto pop-up. Il Multivan Style è per chi vuole viaggiare con stile senza perdere lo spirito dell'avventura."
-    },
-    "california-beach": {
-      "description": "Essenziale e diretto, il California Beach è il van per chi sa che il viaggio è nella strada, non nelle comodità. Facile da guidare, compatto e pronto per qualsiasi avventura."
-    },
-    "sprinter-explorer": {
-      "description": "Lo Sprinter Explorer è costruito per le lunghe distanze. Pannelli solari, cucina completa e climatizzatore per affrontare qualsiasi clima. Il compagno ideale per attraversare l'Italia da nord a sud."
-    },
-    "mini-countryman-camp": {
-      "description": "Il più piccolo della flotta, ma con un cuore grande. Il Mini Countryman Camp è per chi ama la guida, i percorsi tortuosi e la semplicità di un tetto tenda sotto le stelle."
+    "tarifa": {
+      "description": "Questo è il nostro VAN e si chiama Tarifa. Un Fiat Ducato compatto ma spazioso, facile da guidare e dotato di tutto ciò che serve per sentirsi liberi... ma anche a casa. Tarifa è la scelta perfetta per chi cerca comfort e autonomia senza rinunciare alla semplicità del viaggio on the road. La retrocamera facilita ogni manovra, mentre la guida è fluida e intuitiva, anche per chi è alle prime esperienze con i van. All'interno troverai un ambiente luminoso ed elegante che ti accoglie con calore. La zona giorno è ampia e funzionale, con un tavolo comodo dove mangiare, lavorare o rilassarsi. La cucina è attrezzata con due fuochi per cucinare in libertà, e il bagno, sorprendentemente grande per un van di queste dimensioni, ti regala una vera doccia calda come a casa. La sera, la dinette si trasforma in un grande letto dove possono dormire comodamente due persone (o anche tre), e su richiesta è disponibile un terzo letto in cabina. Acqua calda, riscaldamento nella zona abitativa e aria condizionata in cabina rendono ogni stagione perfetta per partire. Tarifa è omologato per tre viaggiatori, ma pensato per chi ama sentirsi a casa ovunque. Che tu voglia perderti tra le cime delle Dolomiti o svegliarti in riva al mare, Tarifa è pronta a seguirti. Per chi sogna un viaggio fatto di libertà, natura e tramonti da ricordare. Con Tarifa, ogni strada può diventare casa."
     }
   }
 }

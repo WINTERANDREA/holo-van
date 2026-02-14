@@ -89,8 +89,11 @@ export function VanShowcase({
           />
         </div>
 
-        {/* Desktop: 3-column grid */}
-        <div className="hidden md:grid md:grid-cols-3 gap-8">
+        {/* Desktop: responsive grid — 2-col for ≤2 vans, 3-col for 3+ */}
+        <div className={cn(
+          'hidden md:grid gap-8',
+          vans.length <= 2 ? 'md:grid-cols-2 max-w-4xl mx-auto' : 'md:grid-cols-3',
+        )}>
           {vans.map((van, i) => (
             <ScrollReveal key={van.slug} delay={i * 0.15}>
               <Link href={`/camper/${van.slug}`}>

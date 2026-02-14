@@ -21,9 +21,8 @@ export default async function HomePage({ params }: PageProps) {
   const t = await getTranslations('vans');
   const tFeatures = await getTranslations('vanFeatures');
 
-  // Get first 3 vans from central data, mapped to VanCard format
+  // Get all vans mapped to VanCard format (currently 2 real vans)
   const showcaseVans = getAllVans()
-    .slice(0, 3)
     .map((van) => toVanCardData(van, locale, (k) => tFeatures(k), (k) => t(k)));
 
   const cardLabels = {
